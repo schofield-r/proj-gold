@@ -6,6 +6,7 @@ exports.up = function(knex) {
       .notNullable();
     usersTable.string("first_name").notNullable();
     usersTable.string("surname").notNullable();
+    usersTable.text('description')
     usersTable.string("location").defaultTo("not_supplied");
     usersTable.integer("loc_radius").defaultTo(0);
     usersTable.string("email").notNullable();
