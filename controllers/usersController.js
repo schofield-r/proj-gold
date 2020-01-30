@@ -1,4 +1,17 @@
-exports.postUser = (req, res, next) => {};
+const {
+  insertUser
+  // updateArticle,
+  // insertComment,
+  // fetchComments,
+  // fetchAllArticles
+} = require("../models/articlesModel");
+
+
+exports.postUser = (req, res, next) => {
+  insertUser(req.params._id)
+    .then(([article]) => res.status(200).send({ article: article }))
+    .catch(next);
+};
 
 exports.getUser = (req, res, next) => {};
 
