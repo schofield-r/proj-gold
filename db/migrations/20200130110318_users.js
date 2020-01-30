@@ -12,10 +12,6 @@ exports.up = function(knex) {
     usersTable.string('email').notNullable();
     usersTable.string('github');
     usersTable.boolean('digest_opt_in').defaultTo(false);
-    usersTable
-      .integer('user_roles')
-      .references('user_roles.id')
-      .notNullable();
   });
 };
 
