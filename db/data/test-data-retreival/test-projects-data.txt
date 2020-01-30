@@ -1,0 +1,15 @@
+[
+  '{{repeat(10, 10)}}',
+  {
+      
+       status:  '{{random("In-progress", "Pitch", "Complete", 	"Testing")}}',
+      votes: '{{integer(0, 100)}}',
+    
+      description:  '{{lorem(20, "words")}}',
+      project_title: '{{company().toUpperCase()}}',   
+
+    
+  }
+  
+  
+]
