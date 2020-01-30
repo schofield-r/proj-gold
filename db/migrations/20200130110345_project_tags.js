@@ -3,7 +3,6 @@ exports.up = function(knex) {
     project_tags_table
       .integer('tag_id')
       .references('tags.tag_id')
-      .notNullable();
     project_tags_table
       .integer('project_id')
       .references('projects.project_id')
