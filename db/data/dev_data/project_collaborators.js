@@ -1,5 +1,4 @@
 module.exports = [
-  { project_id: 1, username: '', tag_id: 1 },
   { project_id: 7, username: 'CookieCoder', tag_id: 3 },
   { project_id: 2, username: 'Meke101', tag_id: 2 },
   { project_id: 2, username: 'HireUs?', tag_id: 2 },
