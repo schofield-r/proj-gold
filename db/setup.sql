@@ -1,5 +1,5 @@
-DROP DATABASE IF EXISTS project_gold_test;
-DROP DATABASE IF EXISTS project_gold;
+DROP DATABASE IF EXISTS proj_gold_test;
+DROP DATABASE IF EXISTS proj_gold;
 
-CREATE DATABASE project_gold_test;
-CREATE DATABASE project_gold;
+CREATE DATABASE proj_gold_test;
+CREATE DATABASE proj_gold;
