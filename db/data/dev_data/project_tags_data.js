@@ -1,0 +1,19 @@
+module.exports = [
+  {tag_id:2,project_id:2,tag_count:0},
+  {tag_id:4,project_id:1,tag_count:0},
+  {tag_id:6,project_id:4,tag_count:0},
+  {tag_id:7,project_id:5,tag_count:0},
+  {tag_id:1,project_id:6,tag_count:0},
+  {tag_id:5,project_id:7,tag_count:0},
+  {tag_id:10,project_id:8,tag_count:2},
+  {tag_id:11,project_id:8,tag_count:1},
+  {tag_id:12,project_id:9,tag_count:0},
+  {tag_id:3,project_id:10,tag_count:2},
+  {tag_id:5,project_id:11,tag_count:0},
+  {tag_id:16,project_id:12,tag_count:4},
+  {tag_id:3,project_id:13,tag_count:0},
+  {tag_id:15,project_id:14,tag_count:0},
+  {tag_id:19,project_id:15,tag_count:0},
+  {tag_id:14,project_id:17,tag_count:0},
+  {tag_id:18,project_id:18,tag_count:0}
+]

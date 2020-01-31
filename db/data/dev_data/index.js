@@ -1,6 +1,9 @@
-exports.project_collaborators = require('./project_collaborators');
-exports.tags = require('./tags');
-exports.user_roles = require('./user_roles');
-exports.comments_data = require('./comments_test_data');
+exports.project_collaborators_data = require('./project_collaborators_data');
+exports.tags_data = require('./tags_data');
+exports.user_roles_data = require('./user_roles_data');
+exports.comments_data = require('./comments_data');
 exports.projects_data = require('./projects_data');
 exports.user_data = require('./users_data');
+exports.user_tags_data = require('./user_tags_data');
+exports.project_tags_data = require('./project_tags_data');
+exports.user_preferences_data = require('./user_preferences_data');

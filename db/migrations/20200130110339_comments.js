@@ -1,7 +1,7 @@
 exports.up = function(knex) {
   return knex.schema.createTable('comments', function(comments_table) {
     comments_table
-      .integer('proj_id')
+      .integer('project_id')
       .references('projects.project_id')
       .notNullable();
     comments_table

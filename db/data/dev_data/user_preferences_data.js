@@ -1,0 +1,22 @@
+module.exports=[
+  {username:'CookieCoder',role_id:2},
+  {username:'AngelInDisguise',role_id:2},
+  {username:'Meke101',role_id:2},
+  {username:'HireUs?',role_id:2},
+  {username:'MRCodeBrain',role_id:2},
+  {username:'JackJon',role_id:2},
+  {username:'Angel',role_id:2},
+  {username:'GoodGuy66',role_id:2},
+  {username:'LeetLion46',role_id:2},
+  {username:'CrashOverride',role_id:2},
+  {username:'InDisguise',role_id:2},
+  {username:'ben',role_id:4},
+  {username:'dave',role_id:4},
+  {username:'LeetLion',role_id:4},
+  {username:'jill',role_id:3},
+  {username:'Goodbill',role_id:3},
+  {username:'Override',role_id:1},
+  {username:'Gary6',role_id:1},
+  {username:'kirkley',role_id:1},
+  {username:'plaster',role_id:1}
+]
