@@ -78,7 +78,7 @@ module.exports = [
     loc_radius: 15,
     description:
       'enim id sint adipisicing sunt amet est mollit mollit mollit duis eiusmod consectetur deserunt dolor nulla',
-    username: 'AngelInDisguise',
+    username: 'Angel',
     email: 'coxphelps@acusage.com',
     github: 'Phelps15',
     digest_opt_in: false
@@ -126,7 +126,7 @@ module.exports = [
     loc_radius: 0,
     description:
       'commodo aliquip et fugiat mollit nostrud nisi labore culpa quis aliqua amet in fugiat et non',
-    username: 'AngelInDisguise',
+    username: 'InDisguise',
     email: 'nadiashort@acusage.com',
     github: 'Short0',
     digest_opt_in: true
@@ -138,7 +138,7 @@ module.exports = [
     loc_radius: 1,
     description:
       'aute laborum est Lorem magna proident ullamco incididunt eu sint esse dolor proident et sit eu',
-    username: 'AngelInDisguise',
+    username: 'ben',
     email: 'simmonsmoss@acusage.com',
     github: 'Moss1',
     digest_opt_in: false
@@ -150,7 +150,7 @@ module.exports = [
     loc_radius: 0,
     description:
       'Lorem labore proident nisi laboris enim Lorem adipisicing eiusmod consectetur aliqua eu cillum exercitation dolore ut',
-    username: 'CrashOverride',
+    username: 'dave',
     email: 'youngharrington@acusage.com',
     github: 'Harrington0',
     digest_opt_in: false
@@ -162,7 +162,7 @@ module.exports = [
     loc_radius: 10,
     description:
       'sit magna voluptate minim excepteur do labore deserunt consectetur incididunt laborum minim minim do ullamco eiusmod',
-    username: 'LeetLion46',
+    username: 'LeetLion',
     email: 'matthewsbrewer@acusage.com',
     github: 'Brewer10',
     digest_opt_in: true
@@ -174,7 +174,7 @@ module.exports = [
     loc_radius: 5,
     description:
       'elit cillum aliqua minim labore pariatur sit voluptate aliquip sint eiusmod officia qui voluptate eiusmod Lorem',
-    username: 'HireUs?',
+    username: 'jill',
     email: 'workmanbrown@acusage.com',
     github: 'Brown5',
     digest_opt_in: true
@@ -186,7 +186,7 @@ module.exports = [
     loc_radius: 2,
     description:
       'nisi nulla irure sint sint ut officia aliqua aute nostrud culpa sint eu consequat veniam amet',
-    username: 'GoodGuy66',
+    username: 'Goodbill',
     email: 'lakeishacamacho@acusage.com',
     github: 'Camacho2',
     digest_opt_in: false
@@ -198,7 +198,7 @@ module.exports = [
     loc_radius: 10,
     description:
       'officia est deserunt aute veniam aliqua pariatur ad minim labore nulla id velit amet elit sit',
-    username: 'CrashOverride',
+    username: 'Override',
     email: 'cartercummings@acusage.com',
     github: 'Cummings10',
     digest_opt_in: false
@@ -210,7 +210,7 @@ module.exports = [
     loc_radius: 0,
     description:
       'nisi incididunt minim adipisicing et dolor dolor exercitation irure esse non est aliquip adipisicing deserunt ea',
-    username: 'GoodGuy66',
+    username: 'Gary6',
     email: 'garnercampbell@acusage.com',
     github: 'Campbell0',
     digest_opt_in: false
@@ -222,7 +222,7 @@ module.exports = [
     loc_radius: 20,
     description:
       'culpa ad dolore culpa laborum anim occaecat dolor incididunt sit cupidatat proident velit voluptate voluptate commodo',
-    username: 'CrashOverride',
+    username: 'kirkley',
     email: 'marcykirk@acusage.com',
     github: 'Kirk20',
     digest_opt_in: false
@@ -234,7 +234,7 @@ module.exports = [
     loc_radius: 10,
     description:
       'nulla culpa aute velit incididunt consectetur proident veniam labore esse sunt in anim minim non deserunt',
-    username: 'AngelInDisguise',
+    username: 'plaster',
     email: 'rayfowler@acusage.com',
     github: 'Fowler10',
     digest_opt_in: false

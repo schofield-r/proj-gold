@@ -12,7 +12,7 @@ exports.up = function(knex) {
     projects_table.timestamp('date_posted').defaultTo(knex.fn.now());
     projects_table
       .string('status')
-      .defaultTo('pitch')
+      .defaultTo('Pitch')
       .notNullable();
     projects_table.text('description').notNullable();
     projects_table
