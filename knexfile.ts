@@ -3,10 +3,10 @@ const ENV = process.env.NODE_ENV || 'development';
 const baseConfig: object = {
   client: 'pg',
   migrations: {
-    directory: './db/migrations'
+    directory: 'db/migrations'
   },
   seeds: {
-    directory: './db/seeds'
+    directory: 'db/seeds'
   }
 };
 const customConfig = {

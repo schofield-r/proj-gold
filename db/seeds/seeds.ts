@@ -22,12 +22,12 @@ exports.seed = function(knex) {
       );
       const tags_dataInsertions = knex('tags').insert(tags_data);
       const user_dataInsertions = knex('users').insert(user_data);
-      const user_tags_dataInsertions = knex('user_tags').insert(user_tags_data);
+      // const user_tags_dataInsertions = knex('user_tags').insert(user_tags_data);
       return Promise.all([
         user_roles_dataInsertions,
         tags_dataInsertions,
-        user_dataInsertions,
-        user_tags_dataInsertions
+        user_dataInsertions
+        // user_tags_dataInsertions
       ]);
     })
     .then(() => {
@@ -37,6 +37,7 @@ exports.seed = function(knex) {
         .returning('*');
     })
     .then(() => {
+      const user_tags_dataInsertions = knex('user_tags').insert(user_tags_data);
       const comments_dataInsertions = knex('comments').insert(comments_data);
       const project_tags_dataInsertions = knex('project_tags').insert(
         project_tags_data
@@ -48,6 +49,7 @@ exports.seed = function(knex) {
         user_preferences_data
       );
       return Promise.all([
+        user_tags_dataInsertions,
         comments_dataInsertions,
         project_tags_dataInsertions,
         project_collaborators_dataInsertions,
