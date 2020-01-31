@@ -15,28 +15,28 @@ exports.getAllProjects = (req, res, next) => {
 };
 
 exports.getPitches = (req, res, next) => {
-  const { project_status } = req.params;
-  fetchAllPitches(project_status).then(projects =>
-    res.status(200).send({ projects })
-  );
+  fetchAllPitches().then(projects => res.status(200).send({ projects }));
 };
 
-exports.patchProject = (req, res, next) => {};
+exports.patchProject = (req, res, next) => {
+  const { status, project_id, project_leader } = req.params;
+  const { description } = req.body;
+  updateProject(
+    status,
+    project_id,
+    project_leader,
+    description
+  ).then(([project]) => res.state(200));
+};
 
 exports.deleteProject = (req, res, next) => {};
 
 exports.getProjectsInProgress = (req, res, next) => {
-  const { project_status } = req.params;
-  fetchAllInProgress(project_status).then(projects =>
-    res.status(200).send({ projects })
-  );
+  fetchAllInProgress().then(projects => res.status(200).send({ projects }));
 };
 
 exports.getProjectsTesting = (req, res, next) => {
-  const { project_status } = req.params;
-  fetchAllTesting(project_status).then(projects =>
-    res.status(200).send({ projects })
-  );
+  fetchAllTesting().then(projects => res.status(200).send({ projects }));
 };
 
 exports.getProjectsCompleted = (req, res, next) => {
@@ -47,8 +47,9 @@ exports.getProjectsCompleted = (req, res, next) => {
 };
 
 exports.postCommentToProject = (req, res, next) => {
-  const comment = req.body;
-  insertCommentToProject([comment]).then(comment =>
+  const { project_id } = req.params;
+  const { comment } = req.body;
+  insertCommentToProject(comment, project_id).then(([comment]) =>
     res.status(201).send({ comment })
   );
 };

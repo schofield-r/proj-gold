@@ -19,9 +19,17 @@ exports.getUser = (req, res, next) => {
 
 exports.patchUser = (req, res, next) => {
   const { user_id } = req.params;
-  updateUser(user_id, req.body)
+  updateUser(user_id)
     .then(([user]) => res.status(200).send({ user }))
     .catch(next);
+};
+
+
+exports.patchTags = (req, res, next) => {
+  const { user_id } = req.params;
+  updateUserTags(user_id, req.body)
+  .then(([user]) => res.status(200).send({ user }))
+  .catch(next);
 };
 
 exports.postTags = (req, res, next) => {
@@ -30,11 +38,4 @@ exports.postTags = (req, res, next) => {
   insertUserTags(user_id, req.body)
     .then(tags => res.status(201).send({ tags: tags }))
     .catch(next);
-};
-
-exports.patchTags = (req, res, next) => {
-    const { user_id } = req.params;
-    updateUserTags(user_id, req.body)
-      .then(([user]) => res.status(200).send({ user }))
-      .catch(next);
 };
