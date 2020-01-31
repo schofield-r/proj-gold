@@ -1,8 +1,8 @@
 const connection = require("../db/connection");
 
-exports.insertUser = (user) => {}
+exports.insertUser = user => {};
 
-exports.fetchUser = (username) => {
+exports.fetchUser = username => {
   return connection
     .select("*")
     .from("users")
@@ -10,8 +10,8 @@ exports.fetchUser = (username) => {
     .returning("*");
 };
 
-exports.updateUser = (user) => {}
+exports.updateUser = user_id => {};
 
-exports.insertUserTags = (username, tags) => { }
+exports.updateUserTags = (username, tags) => {};
 
-
+exports.insertUserTags = (username, tags) => {};

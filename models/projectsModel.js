@@ -4,9 +4,22 @@ exports.fetchAllProjects = () => {
   select("*").from("projects");
 };
 
-exports.fetchAllPitches = () => {};
+exports.fetchAllPitches = () => {
+  select("*")
+    .from("projects")
+    .where("status", "pitch");
+};
 
-exports.updateProject = () => {};
+exports.updateProject = (status, project_id, project_leader, description) => {
+  select("*")
+    .from("projects")
+    .where("project_id", project_id)
+    .update({
+      status: status,
+      project_leader: project_leader,
+      description: description
+    });
+};
 
 exports.removeProject = () => {};
 
@@ -20,4 +33,8 @@ exports.fetchAllTesting = () => {};
 
 exports.fetchAllCompleted = () => {};
 
-exports.insertCommentToProject = () => {};
+exports.insertCommentToProject = (comment, project_id) => {
+  insert(comment)
+    .into("projects")
+    .where("projects.project_id", project_id);
+};
