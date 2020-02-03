@@ -1,35 +1,14 @@
-const projectsRouter = require("express").Router();
-const {
-  getAllProjects,
-  getPitches,
-  patchProject,
-  deleteProject,
-  getProjectsInProgress,
-  getProjectsTesting,
-  getProjectsCompleted,
-  postCommentToProject
-} = require("../controllers/projectsController");
+var projectsRouter = require('express').Router();
+var _a = require('../controllers/projectsController'), getAllProjects = _a.getAllProjects, patchStatus = _a.patchStatus, getProjectById = _a.getProjectById, patchVote = _a.patchVote, deleteProject = _a.deleteProject, postCommentToProject = _a.postCommentToProject;
 // const { methodNotAllowed } = require("../errors/errors");
-
-projectsRouter.route("/").get(getAllProjects);
+projectsRouter.route('/').get(getAllProjects);
 // .all(methodNotAllowed);
-
-projectsRouter.route("/pitches").get(getPitches);
-// .all(methodNotAllowed);
-
 //to update status
+projectsRouter.route('./:project_id/status').patch(patchStatus);
 projectsRouter
-  .route("/:project_id")
-  .patch(patchProject)
-  .delete(deleteProject);
+    .route('/:project_id')
+    .get(getProjectById)
+    .patch(patchVote)["delete"](deleteProject);
 // .all(methodNotAllowed);
-
-projectsRouter.route("/in-progress").get(getProjectsInProgress);
-
-projectsRouter.route("/testing").get(getProjectsTesting);
-
-projectsRouter.route("/completed").get(getProjectsCompleted);
-
-projectsRouter.route("/:project_id/comments").post(postCommentToProject);
-
-module.exports = { projectsRouter };
+projectsRouter.route('/:project_id/comments').post(postCommentToProject);
+module.exports = { projectsRouter: projectsRouter };

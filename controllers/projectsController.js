@@ -1,55 +1,39 @@
-const {
-  fetchAllProjects,
-  fetchAllPitches,
-  updateProject,
-  removeProject,
-  fetchAllInProgress,
-  fetchAllTesting,
-  fetchAllCompleted,
-  insertCommentToProject
-} = require("../models/projectsModel");
-
-exports.getAllProjects = (req, res, next) => {
-  // const { project_status } = req.params;
-  fetchAllProjects().then(projects => res.status(200).send({ projects }));
+var _a = require('../models/projectsModel'), fetchAllProjects = _a.fetchAllProjects, fetchAllPitches = _a.fetchAllPitches, updateProject = _a.updateProject, removeProject = _a.removeProject, fetchAllInProgress = _a.fetchAllInProgress, fetchAllTesting = _a.fetchAllTesting, fetchAllCompleted = _a.fetchAllCompleted, insertCommentToProject = _a.insertCommentToProject;
+exports.getAllProjects = function (req, res, next) {
+    var _a = req.query, sort_by = _a.sort_by, order = _a.order, status = _a.status;
+    fetchAllProjects(sort_by, order, status).then(function (projects) {
+        return res.status(200).send({ projects: projects });
+    });
 };
-
-exports.getPitches = (req, res, next) => {
-  fetchAllPitches().then(projects => res.status(200).send({ projects }));
+exports.getPitches = function (req, res, next) {
+    fetchAllPitches().then(function (projects) { return res.status(200).send({ projects: projects }); });
 };
-
-exports.patchProject = (req, res, next) => {
-  const { status, project_id, project_leader } = req.params;
-  const { description } = req.body;
-  updateProject(
-    status,
-    project_id,
-    project_leader,
-    description
-  ).then(([project]) => res.state(200));
+exports.patchProject = function (req, res, next) {
+    var _a = req.params, status = _a.status, project_id = _a.project_id, project_leader = _a.project_leader;
+    var description = req.body.description;
+    updateProject(status, project_id, project_leader, description).then(function (_a) {
+        var project = _a[0];
+        return res.state(200);
+    });
 };
-
-exports.deleteProject = (req, res, next) => {};
-
-exports.getProjectsInProgress = (req, res, next) => {
-  fetchAllInProgress().then(projects => res.status(200).send({ projects }));
+exports.deleteProject = function (req, res, next) { };
+exports.getProjectsInProgress = function (req, res, next) {
+    fetchAllInProgress().then(function (projects) { return res.status(200).send({ projects: projects }); });
 };
-
-exports.getProjectsTesting = (req, res, next) => {
-  fetchAllTesting().then(projects => res.status(200).send({ projects }));
+exports.getProjectsTesting = function (req, res, next) {
+    fetchAllTesting().then(function (projects) { return res.status(200).send({ projects: projects }); });
 };
-
-exports.getProjectsCompleted = (req, res, next) => {
-  const { project_status } = req.params;
-  fetchAllCompleted(project_status).then(projects =>
-    res.status(200).send({ projects })
-  );
+exports.getProjectsCompleted = function (req, res, next) {
+    var project_status = req.params.project_status;
+    fetchAllCompleted(project_status).then(function (projects) {
+        return res.status(200).send({ projects: projects });
+    });
 };
-
-exports.postCommentToProject = (req, res, next) => {
-  const { project_id } = req.params;
-  const { comment } = req.body;
-  insertCommentToProject(comment, project_id).then(([comment]) =>
-    res.status(201).send({ comment })
-  );
+exports.postCommentToProject = function (req, res, next) {
+    var project_id = req.params.project_id;
+    var comment = req.body.comment;
+    insertCommentToProject(comment, project_id).then(function (_a) {
+        var comment = _a[0];
+        return res.status(201).send({ comment: comment });
+    });
 };
