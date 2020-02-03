@@ -8,6 +8,7 @@ import { HeaderComponent } from "./components/header/header.component";
 import { NavDropdownComponent } from "./components/bootstrap/nav-dropdown/nav-dropdown.component";
 import { HomepageComponent } from "./components/pages/homepage/homepage.component";
 import { HomepageCarouselComponent } from "./components/bootstrap/homepage-carousel/homepage-carousel.component";
+import { ProjectOverviewComponent } from "./components/pages/project-overview/project-overview.component";
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { HomepageCarouselComponent } from "./components/bootstrap/homepage-carou
     HeaderComponent,
     NavDropdownComponent,
     HomepageComponent,
-    HomepageCarouselComponent
+    HomepageCarouselComponent,
+    ProjectOverviewComponent
   ],
   imports: [BrowserModule, AppRoutingModule, NgbModule],
   providers: [],
