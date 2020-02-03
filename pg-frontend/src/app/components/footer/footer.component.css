@@ -1,0 +1,28 @@
+footer {
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.fb-logo {
+  height: auto;
+  width: 2rem;
+  padding: 0.1rem;
+}
+
+.tw-logo {
+  height: auto;
+  width: 2rem;
+  padding: 0.1rem;
+}
+
+.ig-logo {
+  height: auto;
+  width: 2rem;
+  padding: 0.1rem;
+}
