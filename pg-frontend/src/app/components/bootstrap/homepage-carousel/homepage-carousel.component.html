@@ -1,6 +1,7 @@
 <ngb-carousel
+  class="app-homepage-carousel"
   #carousel
-  interval="1000"
+  interval="4000"
   [pauseOnHover]="pauseOnHover"
   (slide)="onSlide($event)"
 >
@@ -20,8 +21,7 @@
   </ng-template>
 </ngb-carousel>
 
-<hr />
-
+<!-- 
 <div class="form-check">
   <input
     type="checkbox"
@@ -59,4 +59,4 @@
   class="btn btn-outline-dark btn-sm"
 >
   {{ paused ? "Cycle" : "Pause" }}
-</button>
+</button> -->
