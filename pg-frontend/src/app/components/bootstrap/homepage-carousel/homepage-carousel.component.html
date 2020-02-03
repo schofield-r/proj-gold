@@ -15,7 +15,11 @@
       rel="nofollow noopener noreferrer"
     >
       <div class="picsum-img-wrapper">
-        <img [src]="img" alt="My image {{ i + 1 }} description" />
+        <img
+          style="max-height: 50vh;"
+          [src]="img"
+          alt="My image {{ i + 1 }} description"
+        />
       </div>
     </a>
   </ng-template>

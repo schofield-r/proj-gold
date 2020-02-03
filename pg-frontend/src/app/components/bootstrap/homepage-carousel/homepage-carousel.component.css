@@ -1,3 +1,10 @@
-.app-homepage-carousel.pg {
-  width: 100px;
+.app-homepage-carousel.pg .carousel .item {
+  height: 300px;
+}
+
+.app-homepage-carousel.pg .item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 300px;
 }

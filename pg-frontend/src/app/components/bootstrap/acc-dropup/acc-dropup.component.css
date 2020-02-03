@@ -4,3 +4,8 @@
   border-width: 2px;
   color: black;
 }
+
+.btn.btn-outline-primary.pg:hover {
+  background-color: black;
+  color: white;
+}

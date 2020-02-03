@@ -4,4 +4,23 @@
   border-width: 2px;
   font-family: "Saira Condensed";
   font-weight: 300;
+  outline: none;
+  box-shadow: none;
+}
+
+.btn.btn-outline-primary.pg:hover {
+  color: white;
+  background-color: black;
+  outline: none;
+  box-shadow: none;
+}
+
+.btn.btn-outline-primary.pg:active {
+  outline: none;
+  box-shadow: none;
+}
+
+.btn.btn-outline-primary.pg:focus {
+  outline: none;
+  box-shadow: none;
 }
