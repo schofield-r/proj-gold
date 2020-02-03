@@ -11,6 +11,7 @@ import { HomepageCarouselComponent } from "./components/bootstrap/homepage-carou
 import { FooterComponent } from "./components/footer/footer.component";
 import { AccDropupComponent } from "./components/bootstrap/acc-dropup/acc-dropup.component";
 import { LoginButtonComponent } from "./components/bootstrap/login-button/login-button.component";
+import { ProjectOverviewComponent } from "./components/pages/project-overview/project-overview.component";
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { LoginButtonComponent } from "./components/bootstrap/login-button/login-
     HomepageCarouselComponent,
     FooterComponent,
     AccDropupComponent,
-    LoginButtonComponent
+    LoginButtonComponent,
+    ProjectOverviewComponent
   ],
   imports: [BrowserModule, AppRoutingModule, NgbModule],
   providers: [],
