@@ -1,0 +1,24 @@
+header {
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.logo {
+  height: auto;
+  width: 5rem;
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+}
+
+.header-controls * {
+  margin-left: 1rem;
+}
