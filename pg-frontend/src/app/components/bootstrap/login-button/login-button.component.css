@@ -1,6 +1,7 @@
 .btn.btn-outline-primary.pg {
   color: black;
   border-color: black;
-  font-family: "Saira Condensed";
   border-width: 2px;
+  font-family: "Saira Condensed";
+  font-weight: 300;
 }
