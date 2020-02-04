@@ -14,6 +14,7 @@ import { LoginButtonComponent } from "./components/bootstrap/login-button/login-
 import { ProjectOverviewComponent } from "./components/pages/project-overview/project-overview.component";
 import { ProjectProgressComponent } from "./components/pages/project-progress/project-progress.component";
 import { ProjectOverviewTabsetComponent } from './components/bootstrap/project-overview-tabset/project-overview-tabset.component';
+import { ProjOverviewTabsetComponent } from './components/bootstrap/proj-overview-tabset/proj-overview-tabset.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ProjectOverviewTabsetComponent } from './components/bootstrap/project-o
     FooterComponent,
     AccDropupComponent,
     LoginButtonComponent,
-    ProjectOverviewTabsetComponent
+    ProjectOverviewTabsetComponent,
+    ProjOverviewTabsetComponent
   ],
   imports: [BrowserModule, AppRoutingModule, NgbModule],
   providers: [],

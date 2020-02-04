@@ -1,7 +1,9 @@
 .project-overview-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: start;
+  padding: 1rem 3rem;
 }
 
 .project-overview-container * {
@@ -42,4 +44,21 @@
 
 .btn.btn-outline-primary.pg.like {
   border-radius: 50%;
+}
+
+.btn.btn-outline-primary.pg.like:hover {
+  color: crimson;
+}
+
+.tabset {
+  position: relative;
+  top: -3rem;
+  width: 100%;
+}
+
+@media only screen and (max-width: 1150px) {
+  .tabset {
+    margin-top: 0.5rem;
+    position: static;
+  }
 }
