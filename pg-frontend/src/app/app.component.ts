@@ -7,4 +7,10 @@ import { Component } from "@angular/core";
 })
 export class AppComponent {
   title = "pg-frontend";
+
+  mySwitch = false;
+
+  switch() {
+    this.mySwitch = !this.mySwitch;
+  }
 }
