@@ -1,16 +1,18 @@
 exports.up = function(knex) {
   return knex.schema.createTable('comments', function(comments_table) {
     comments_table
-      .integer('project_id')
-      .references('projects.project_id')
+      .integer("project_id")
+      .references("projects.project_id")
+      .onDelete("CASCADE")
       .notNullable();
     comments_table
       .increments('comment_id')
       .primary()
       .notNullable();
     comments_table
-      .string('created_by')
-      .references('users.username')
+      .string("created_by")
+      .references("users.username")
+      .onDelete("CASCADE")
       .notNullable();
     comments_table.text('body').notNullable();
     comments_table

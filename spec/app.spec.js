@@ -1,5 +1,5 @@
 process.env.NODE_ENV = "test";
-const app = require("../app");
+const {app} = require("../app");
 const request = require("supertest");
 const connection = require("../db/connection");
 const chai = require("chai");
@@ -11,9 +11,9 @@ chai.use(chaiSorted);
 describe("/api", () => {
   beforeEach(() => connection.seed.run());
   after(() => connection.destroy());
-  describe("GET /projects", () => {
+  describe.only("GET /projects", () => {
     it("200 response, gets all projects with sort order defaulting to DESC", () => {
-      return request(ap)
+      return request(app)
         .get("/api/projects")
         .expect(200)
         .then(res => {
@@ -81,7 +81,7 @@ describe("/api", () => {
   describe("PATCH /projects/:project_id", () => {
     it("200 response, patches votes on projects and returns the updated project", () => {
       return request(app)
-        .patch("/projects/1")
+        .patch("/api/projects/1")
         .send({ votes: 1 })
         .expect(200)
         .then(res => {
@@ -92,7 +92,7 @@ describe("/api", () => {
   describe("PATCH /projects/:project_id/status", () => {
     it("200 response, patches status of project and returns updated project", () => {
       return request(app)
-        .patch("/projects/1/status")
+        .patch("/api/projects/1/status")
         .send({ status: testing })
         .expect(200)
         .then(res.body.project.status)
@@ -142,7 +142,7 @@ describe("/api", () => {
         });
     });
   });
-  describe("GET /projects/:project_id/comments", () => {
+  describe.only("GET /projects/:project_id/comments", () => {
     it("200 response, gets a projects comments", () => {
       return request(app)
         .get("/api/projects/1/comments")
@@ -159,11 +159,11 @@ describe("/api", () => {
         });
     });
   });
-  describe("POST /projects/:project_id/comments", () => {
+  describe.only("POST /projects/:project_id/comments", () => {
     it("201 response, ", () => {
       return request(app)
         .post("/api/projects/1/comments")
-        .send({ created_by: dave, body: "this is a comment" })
+        .send({ created_by: 'dave', body: "this is a comment" })
         .expect(204)
         .then(res => {
           expect(res.body.comment).to.contain.keys(
@@ -189,13 +189,14 @@ describe("/api", () => {
       return request(app)
         .get("/api/comments/1")
         .expect(200)
-        .then(res => {
+        .then(res => {console.log(res.body.comment)
           expect(res.body.comment).to.eql({
             project_id: 1,
+            comment_id: 1,
             created_by: "Goodbill",
             body:
               "do ipsum pariatur excepteur id commodo quis irure aliqua deserunt fugiat et",
-            date_created: "2019-12-28T06:56:34 -00:00"
+            date_created: "2019-12-28T06:56:34.000Z"
           });
         });
     });
@@ -234,11 +235,12 @@ describe("/api", () => {
     });
   });
   describe("GET /users/:username", () => {
-    it("200 response,", () => {
+    it("200 response, returns user", () => {
       return request(app)
         .get("/api/users/CookieCoder")
         .expect(200)
         .then(res => {
+          console.log(res.body.user);
           expect(res.body.user).to.eql({
             first_name: "Dixon",
             surname: "Howell",
@@ -255,50 +257,51 @@ describe("/api", () => {
     });
   });
   describe("DELETE /users/:username", () => {
-    it("204 response,", () => {
+    it("204 response, delete user by username", () => {
       return request(app)
         .delete("/api/users/CookieCoder")
         .expect(204);
     });
   });
   describe("POST /users/:username/update_preferences", () => {
-    it("201 response,", () => {
+    it("201 response, posts a new user role on user ", () => {
       return request(app)
-        .post("/api/users/dave/")
+        .post("/api/users/dave/update_preferences")
         .send({ role_id: 3 })
         .expect(201)
         .then(res => {
-          expect(res.body.userRole).to.equal({
+          console.log(res.body);
+          expect(res.body.userRole).to.eql({
             username: "dave",
-            user_role: 3
+            role_id: 3
           });
         });
     });
   });
   describe("DELETE /users/:username/update_preferences", () => {
-    it("204 response,", () => {
+    it("204 response, removes a user role on user", () => {
       return request(app)
-        .delete("/api/users/dave/")
+        .delete("/api/users/dave/update_preferences")
         .send({ role_id: 4 })
         .expect(204);
     });
   });
-  describe("POST /users/:username/update_tags", () => {
-    it("201 response,", () => {
+  describe("POST /users/:username/user_tags", () => {
+    it("201 response, adds a tag to user_tag table", () => {
       return request(app)
-        .post("/api/users/dave/update_tags")
+        .post("/api/users/ben/user_tags")
         .send({ tag_id: 18 })
         .expect(201)
-        .then(res => {
-          expect(res.body.tag).to.equal({ username: "dave", tag_id: 18 });
+        .then(res => {console.log(res.body)
+          expect(res.body.tag).to.eql({ username: "ben", tag_id: 18 });
         });
     });
   });
-  describe("DELETE /users/:username/update_tags", () => {
-    it("204 response,", () => {
+  describe("DELETE /users/:username/user_tags", () => {
+    it("204 response, removes user tag from user", () => {
       return request(app)
-        .delete("/api/users/dave/update_tags")
-        .send({ tag_id: 21 })
+        .delete("/api/users/ben/user_tags")
+        .send({ tag_id: 20 })
         .expect(204);
     });
   });

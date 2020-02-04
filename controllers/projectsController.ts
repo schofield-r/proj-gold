@@ -1,4 +1,4 @@
-import { create } from 'domain';
+// import { create } from 'domain';
 
 const {
   fetchAllProjects,
@@ -56,7 +56,7 @@ exports.patchToProject = (req, res, next) => {
     status,
     project_leader,
     description
-  ).then(project => res.status(200).send(project));
+  ).then(project => res.status(200).send({project:project[0]}));
 };
 
 exports.postTagsToProjectTags = (req, res, next) => {
@@ -77,12 +77,13 @@ exports.deleteTagsfromProjectTags = (req, res, next) => {
 
 exports.getCommentsByProjectId = (req, res, next) => {
   const { project_id } = req.params;
+  console.log(project_id,'in controller')
   fetchCommentsByProjectId(project_id).then(comments =>
     res.status(200).send(comments)
   );
 };
 
-exports.postCommentByProject_Id = (req, res, next) => {
+exports.postCommentByProjectId = (req, res, next) => {
   const { project_id } = req.params;
   const { body, created_by } = req.body;
   insertCommentToProjectId(project_id, body, created_by).then(comment =>

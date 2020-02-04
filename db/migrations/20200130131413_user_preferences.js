@@ -3,8 +3,9 @@ exports.up = function(knex) {
     user_preference_table
   ) {
     user_preference_table
-      .string('username')
-      .references('users.username')
+      .string("username")
+      .references("users.username")
+      .onDelete("CASCADE")
       .notNullable();
     user_preference_table
       .integer('role_id')

@@ -25,7 +25,7 @@ exports.insertUser = (
     })
     .returning('*')
     .then(user => {
-      return { user };
+      return  user ;
     });
 };
 
@@ -54,16 +54,17 @@ exports.removeUser = username => {
 };
 
 exports.insertUserTags = (username, tag_id) => {
+  console.log('in model')
   return connection('user_tags')
     .insert({ username: username, tag_id: tag_id })
     .returning('*')
     .then(tag => {
-      return { tag };
+      return { tag:tag[0] };
     });
 };
 
-exports.deleteUserTags = (username, tag_id) => {
-  return connection('user_preferences')
+exports.removeTags = (username, tag_id) => {
+  return connection("user_tags")
     .where({
       username: username,
       tag_id: tag_id
@@ -73,32 +74,33 @@ exports.deleteUserTags = (username, tag_id) => {
       if (rows_deleted === 0)
         return Promise.reject({
           status: 404,
-          msg: 'tag not deleted'
+          msg: "tag not deleted"
         });
     });
 };
 
-exports.insertUserPreferences = (username, role_id) => {
-  return connection('user_preferences')
+exports.insertUserRole = (username, role_id) => {
+  console.log(username, role_id);
+  return connection("user_preferences")
     .insert({
       username: username,
       role_id: role_id
     })
-    .returning('*')
+    .returning("*")
     .then(userRole => {
-      return { userRole };
+      return { userRole:userRole[0] };
     });
 };
 
-exports.deleteUserPreferences = (username, role_id) => {
-  return connection('user_preferences')
+exports.removeUserRole = (username, role_id) => {
+  return connection("user_preferences")
     .where({ username: username, role_id: role_id })
     .del()
     .then(rows_deleted => {
       if (rows_deleted === 0)
         return Promise.reject({
           status: 404,
-          msg: 'preference not deleted'
+          msg: "preference not deleted"
         });
     });
 };

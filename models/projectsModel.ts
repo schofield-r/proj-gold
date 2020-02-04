@@ -65,15 +65,14 @@ exports.fetchCommentsByProjectId = function(project_id) {
     .from('comments')
     .where('project_id', '=', project_id)
     .then(comments => {
-      return { comments };
+      return { comments:comments };
     });
 };
 
 exports.insertCommentToProjectId = function(project_id, body, created_by) {
-  return connection
-    .into('comments')
+  return connection("comments")
     .insert({ project_id: project_id, body: body, created_by: created_by })
-    .returning('*')
+    .returning("*")
     .then(comment => {
       return {
         comment: comment[0]
@@ -81,22 +80,22 @@ exports.insertCommentToProjectId = function(project_id, body, created_by) {
     });
 };
 
-exports.patchToProject = function(
+exports.updateToProject = function(
   project_id,
   status,
   project_leader,
   description
 ) {
-  return connection('projects')
-    .where('project_id', '=', project_id)
+  return connection("projects")
+    .where("project_id", "=", project_id)
     .update({
       status: status,
       project_leader: project_leader,
       description: description
     })
-    .returning('*')
+    .returning("*")
     .then(project => {
-      return { project: project[0] };
+      return  project ;
     });
 };
 
@@ -109,7 +108,7 @@ exports.addTagsToProjectTags = function(project_id, tag_id, count) {
     })
     .returning('*')
     .then(tag => {
-      return { tag };
+      return  tag ;
     });
 };
 
@@ -132,7 +131,7 @@ const updateProjectTags = function(project_id, tag_id, count = 1) {
     .decrement('count', count)
     .returning('*')
     .then(tag => {
-      return { tag };
+      return  tag ;
     });
 };
 

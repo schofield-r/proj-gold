@@ -65,13 +65,79 @@ exports.fetchCommentsByProjectId = function (project_id) {
     });
 };
 exports.insertCommentToProjectId = function (project_id, body, created_by) {
-    return connection
-        .into('comments')
+    return connection("comments")
         .insert({ project_id: project_id, body: body, created_by: created_by })
-        .returning('*')
+        .returning("*")
         .then(function (comment) {
         return {
             comment: comment[0]
         };
     });
 };
+exports.updateToProject = function (project_id, status, project_leader, description) {
+    return connection("projects")
+        .where("project_id", "=", project_id)
+        .update({
+        status: status,
+        project_leader: project_leader,
+        description: description
+    })
+        .returning("*")
+        .then(function (project) {
+        return project;
+    });
+};
+exports.addTagsToProjectTags = function (project_id, tag_id, count) {
+    return connection('project_tags')
+        .insert({
+        tag_id: tag_id,
+        project_id: project_id,
+        count: count
+    })
+        .returning('*')
+        .then(function (tag) {
+        return tag;
+    });
+};
+exports.deleteTagsfromProjectTags = function (project_id, tag_id) {
+    return connection('project_tags')
+        .where({ project_id: project_id, tag_id: tag_id })
+        .del()
+        .then(function (rows_deleted) {
+        if (rows_deleted === 0)
+            return Promise.reject({
+                status: 404,
+                msg: 'tag not deleted'
+            });
+    });
+};
+var updateProjectTags = function (project_id, tag_id, count) {
+    if (count === void 0) { count = 1; }
+    return connection('project_tags')
+        .where({ project_id: project_id, tag_id: tag_id })
+        .decrement('count', count)
+        .returning('*')
+        .then(function (tag) {
+        return tag;
+    });
+};
+exports.addProjectCollaborator = function (project_id, username, tag_id) {
+    return connection('project_collaborators')
+        .havingExists(function () {
+        connection
+            .select('*')
+            .from('user_tags')
+            .where({
+            username: username,
+            tag_id: tag_id
+        });
+    })
+        .insert({ username: username, tag_id: tag_id })
+        .returning('*')
+        .then(function (collaborator) {
+        if (collaborator) {
+            return updateProjectTags(project_id, tag_id);
+        }
+    });
+};
+module.exports = { updateProjectTags: updateProjectTags };

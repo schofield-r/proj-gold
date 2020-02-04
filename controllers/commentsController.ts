@@ -5,7 +5,7 @@ const {
 
 exports.getCommentById = (req, res, next) => {
   const { comment_id } = req.params;
-  fetchCommentById(comment_id).then(comment => res.send(200).status(comment));
+  fetchCommentById(comment_id).then(comment => res.status(200).send(comment));
 };
 
 exports.deleteCommentById = (req, res, next) => {

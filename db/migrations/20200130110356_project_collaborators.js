@@ -3,16 +3,19 @@ exports.up = function(knex) {
     project_collaborators_table
   ) {
     project_collaborators_table
-      .integer('project_id')
-      .references('projects.project_id')
+      .integer("project_id")
+      .references("projects.project_id")
+      .onDelete("CASCADE")
       .notNullable();
     project_collaborators_table
-      .string('username')
-      .references('users.username')
+      .string("username")
+      .references("users.username")
+      .onDelete("CASCADE")
       .notNullable();
     project_collaborators_table
-      .integer('tag_id')
-      .references('tags.tag_id')
+      .integer("tag_id")
+      .references("tags.tag_id")
+      .onDelete("CASCADE")
       .notNullable();
   });
 };
