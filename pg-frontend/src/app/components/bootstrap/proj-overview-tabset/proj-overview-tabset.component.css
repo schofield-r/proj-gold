@@ -11,6 +11,19 @@
   border-radius: 0 0 15px 15px;
   font-size: 2rem;
   height: 70vh;
+  display: flex;
+}
+
+.left-column {
+  width: calc(100% - 500px);
+  overflow-y: scroll;
+}
+
+.right-column {
+  width: 480px;
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
 }
 
 .tab-content h2,
