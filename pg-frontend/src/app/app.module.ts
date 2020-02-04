@@ -15,6 +15,7 @@ import { ProjectOverviewComponent } from "./components/pages/project-overview/pr
 import { ProjectProgressComponent } from "./components/pages/project-progress/project-progress.component";
 import { ProjOverviewTabsetComponent } from "./components/bootstrap/proj-overview-tabset/proj-overview-tabset.component";
 import { ProjectCardComponent } from "./components/cards/project-card/project-card.component";
+import { ProjectUpdateCardComponent } from './components/cards/project-update-card/project-update-card.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ProjectCardComponent } from "./components/cards/project-card/project-ca
     AccDropupComponent,
     LoginButtonComponent,
     ProjOverviewTabsetComponent,
-    ProjectCardComponent
+    ProjectCardComponent,
+    ProjectUpdateCardComponent
   ],
   imports: [BrowserModule, AppRoutingModule, NgbModule],
   providers: [],

@@ -52,7 +52,19 @@
     >
     <ng-template ngbTabContent>
       <div class="tab-content">
-        <h2>Project Progress</h2>
+        <div class="left-column">
+          <h2>Project Progress</h2>
+          <app-project-update-card></app-project-update-card>
+          <app-project-update-card></app-project-update-card>
+          <app-project-update-card></app-project-update-card>
+          <app-project-update-card></app-project-update-card>
+          <app-project-update-card></app-project-update-card>
+          <app-project-update-card></app-project-update-card>
+          <app-project-update-card></app-project-update-card>
+        </div>
+        <div class="right-column">
+          <app-project-card></app-project-card>
+        </div>
       </div>
     </ng-template>
   </ngb-tab>
