@@ -1,0 +1,46 @@
+.project-card-container {
+  width: 480px;
+  border: 2px solid black;
+  border-radius: 15px;
+}
+
+.project-card-container figure {
+  height: 240px;
+  background-color: grey;
+  margin-bottom: 0;
+}
+
+.project-card-container figcaption {
+  height: 240px;
+  position: relative;
+  top: -240px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: 12.5px 12.5px 0 0;
+  overflow: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-card-container figcaption h2 {
+  font-size: 4rem;
+}
+
+.project-card-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12.5px 12.5px 0 0;
+  overflow: none;
+}
+
+.project-card-text {
+  padding: 1rem;
+}
+
+p {
+  margin: 1rem 0 0 0;
+  font-size: 1.5rem;
+}
