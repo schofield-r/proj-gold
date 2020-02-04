@@ -33,23 +33,45 @@ exports.removeProject = function (project_id) {
             });
     });
 };
-// exports.updateProject = function (status, project_id, project_leader, description) {
-//     select("*")
-//         .from("projects")
-//         .where("project_id", project_id)
-//         .update({
-//         status: status,
-//         project_leader: project_leader,
-//         description: description
-//     });
-// };
-// exports.fetchAllInProgress = function () {
-//     select("*")
-//         .from("projects")
-//         .where("projects.project_status", "in-progress");
-// };
-// exports.insertCommentToProject = function (comment, project_id) {
-//     insert(comment)
-//         .into("projects")
-//         .where("projects.project_id", project_id);
-// };
+exports.updateVotes = function (project_id, votes) {
+    return connection
+        .select('*')
+        .from('projects')
+        .where('project_id', '=', project_id)
+        .increment('votes', votes)
+        .returning('*')
+        .then(function (project) {
+        return { project: project[0] };
+    });
+};
+exports.updateStatus = function (project_id, status) {
+    return connection
+        .select('*')
+        .from('projects')
+        .where('project_id', '=', project_id)
+        .update('status', status)
+        .returning('*')
+        .then(function (project) {
+        return { project: project[0] };
+    });
+};
+exports.fetchCommentsByProjectId = function (project_id) {
+    return connection
+        .select('*')
+        .from('comments')
+        .where('project_id', '=', project_id)
+        .then(function (comments) {
+        return { comments: comments };
+    });
+};
+exports.insertCommentToProjectId = function (project_id, body, created_by) {
+    return connection
+        .into('comments')
+        .insert({ project_id: project_id, body: body, created_by: created_by })
+        .returning('*')
+        .then(function (comment) {
+        return {
+            comment: comment[0]
+        };
+    });
+};

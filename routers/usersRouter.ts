@@ -1,26 +1,28 @@
-const usersRouter = require("express").Router();
+const usersRouter = require('express').Router();
 const {
   postUser,
   getUser,
-  patchUser,
+  deleteUser,
   postTags,
-  patchTags
-} = require("../controllers/usersController");
-// const { methodNotAllowed } = require("../errors/errors");
+  postUserRole,
+  deleteUserRole,
+  deleteTags
+} = require('../controllers/usersController');
 
-usersRouter.route("/").post(postUser);
-// .all(methodNotAllowed);
+usersRouter.route('/').post(postUser);
 
 usersRouter
-  .route("/:username")
+  .route('/:username')
   .get(getUser)
-  .patch(patchUser);
-// .all(methodNotAllowed);
+  .delete(deleteUser);
+
+usersRouter('./:username/update_preferences')
+  .post(postUserRole)
+  .delete(deleteUserRole);
 
 usersRouter
-  .route("/:username/user_tags")
+  .route('/:username/user_tags')
   .post(postTags)
-  .patch(patchTags);
-// .all(methodNotAllowed);
+  .delete(deleteTags);
 
 module.exports = { usersRouter };
