@@ -1,7 +1,8 @@
 import { Component, ViewChild } from "@angular/core";
 import image1 from "../../../../assets/img/project-images/Project-1-image.jpg";
-import image2 from "../../../../assets/img/project-images/Project-2-image.png";
+import image2 from "../../../../assets/img/project-images/Project-2-image.jpg";
 import image3 from "../../../../assets/img/project-images/Project-3-image.jpg";
+import image4 from "../../../../assets/img/project-images/Project-4-image.jpg";
 
 import {
   NgbCarousel,
@@ -14,7 +15,7 @@ import {
   templateUrl: "./homepage-carousel.component.html"
 })
 export class HomepageCarouselComponent {
-  images = [image1, image2, image3];
+  images = [image1, image2, image3, image4];
 
   paused = false;
   unpauseOnArrow = false;
