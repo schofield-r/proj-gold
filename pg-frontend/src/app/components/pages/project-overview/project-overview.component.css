@@ -1,3 +1,45 @@
 .project-overview-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-overview-container * {
+  font-family: "Saira Condensed", Arial, Helvetica, sans-serif;
   color: white;
+}
+
+.project-overview-container h1 {
+  font-size: 4rem;
+}
+
+.project-overview-subheader {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.project-overview-subheader * {
+  margin: 0;
+  margin-right: 2rem;
+}
+
+.btn.btn-outline-primary.pg {
+  color: white;
+  border-color: white;
+  border-width: 2px;
+  font-family: "Saira Condensed";
+  font-weight: 300;
+  outline: none;
+  box-shadow: none;
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+.btn.btn-outline-primary.pg:hover {
+  background-color: #303030;
+}
+
+.btn.btn-outline-primary.pg.like {
+  border-radius: 50%;
 }

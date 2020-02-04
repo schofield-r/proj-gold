@@ -13,6 +13,7 @@ import { AccDropupComponent } from "./components/bootstrap/acc-dropup/acc-dropup
 import { LoginButtonComponent } from "./components/bootstrap/login-button/login-button.component";
 import { ProjectOverviewComponent } from "./components/pages/project-overview/project-overview.component";
 import { ProjectProgressComponent } from "./components/pages/project-progress/project-progress.component";
+import { ProjectOverviewTabsetComponent } from './components/bootstrap/project-overview-tabset/project-overview-tabset.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ProjectProgressComponent } from "./components/pages/project-progress/pr
     ProjectProgressComponent,
     FooterComponent,
     AccDropupComponent,
-    LoginButtonComponent
+    LoginButtonComponent,
+    ProjectOverviewTabsetComponent
   ],
   imports: [BrowserModule, AppRoutingModule, NgbModule],
   providers: [],
