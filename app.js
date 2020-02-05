@@ -1,9 +1,9 @@
 // import { Server } from 'http';
 
-const express = require("express");
-const apiRouter = require("./routers/apiRouter");
+const express = require('express');
+const apiRouter = require('./routers/apiRouter');
 const app = express();
-const cors = require("cors");
+const cors = require('cors');
 // const {
 //   handlePsqlErrors,
 //   handleCustomErrors
@@ -13,7 +13,7 @@ app.use(cors());
 
 app.use(express.json());
 
-app.use("/api", apiRouter);
+app.use('/api', apiRouter);
 
 // app.all('/*', (req, res, next) => {
 //   res.status(404).send({ msg: 'Endpoint does not exist' });
@@ -23,4 +23,4 @@ app.use("/api", apiRouter);
 
 // app.use(handleCustomErrors);
 
-module.exports = { app };
+module.exports = app;
