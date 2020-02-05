@@ -21,23 +21,6 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  // onSubmit() {
-  //   if (this.userForm.valid) {
-  //     alert("User form is valid!!");
-  //   } else {
-  //     alert("User form is not valid!!");
-  //   }
-  // }
-
-  // onSubmit() {
-  //   if (this.userForm.valid) {
-  //     this.http
-  //       .post("/api/userCreate", this.userForm.value)
-  //       .subscribe(response => {
-  //         console.log("repsonse ", response);
-  //       });
-  //   }
-  // }
   onSubmit() {
     if (this.userForm.valid) {
       alert("good");
@@ -53,3 +36,21 @@ export class RegisterComponent implements OnInit {
     }
   }
 }
+
+                    // onSubmit() {
+                    //   if (this.userForm.valid) {
+                    //     alert("User form is valid!!");
+                    //   } else {
+                    //     alert("User form is not valid!!");
+                    //   }
+                    // }
+                  
+                    // onSubmit() {
+                    //   if (this.userForm.valid) {
+                    //     this.http
+                    //       .post("/api/userCreate", this.userForm.value)
+                    //       .subscribe(response => {
+                    //         console.log("repsonse ", response);
+                    //       });
+                    //   }
+                    // }
