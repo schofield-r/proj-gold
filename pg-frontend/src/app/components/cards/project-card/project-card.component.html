@@ -4,17 +4,11 @@
     <figcaption><h2>Caption</h2></figcaption>
   </figure>
   <div class="project-card-text">
-    <h3>Project Title</h3>
-    <h4>Project Status</h4>
-    <p>Date Posted</p>
-    <p>Votes</p>
-    <p>
-      Description Description Description Description Description Description
-      Description Description Description Description Description Description
-      Description Description Description Description Description
-    </p>
-    <p>
-      Created by
-    </p>
+    <h3>Title: {{ data.project_title }}</h3>
+    <h4>Status: {{ data.status }}</h4>
+    <p>Posted: {{ data.date_posted }}</p>
+    <p>Votes: {{ data.votes }}</p>
+    <p>Description: {{ data.description }}</p>
+    <p>Posted by: {{ data.created_by }}</p>
   </div>
 </div>
