@@ -1,8 +1,4 @@
 import { Component, ViewChild } from "@angular/core";
-// import image1 from "../../../../assets/img/project-images/Project-1-image.jpg";
-// import image2 from "../../../../assets/img/project-images/Project-2-image.jpg";
-// import image3 from "../../../../assets/img/project-images/Project-3-image.jpg";
-// import image4 from "../../../../assets/img/project-images/Project-4-image.jpg";
 
 import {
   NgbCarousel,
