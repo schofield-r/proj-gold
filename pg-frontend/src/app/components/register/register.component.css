@@ -1,3 +1,8 @@
 form  {
 color: rgb(219, 219, 125);
+font-family: Saira Condensed;
+  max-width: 600px;
+  margin: auto;
+  font-size: 30px;
+  margin-bottom: 20px;
 }

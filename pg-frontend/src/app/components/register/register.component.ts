@@ -47,7 +47,7 @@ export class RegisterComponent implements OnInit {
           console.log("repsonsei ", response);
         });
     } else {
-      alert("Please fill all required fields");
+      alert("Please fill all required");
       console.log("NOT GOOD ");
       // console.log(this.userForm.value);
     }

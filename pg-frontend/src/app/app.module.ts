@@ -13,6 +13,12 @@ import { AccDropupComponent } from "./components/bootstrap/acc-dropup/acc-dropup
 import { LoginButtonComponent } from "./components/bootstrap/login-button/login-button.component";
 import { ProjectOverviewComponent } from "./components/pages/project-overview/project-overview.component";
 import { ProjectProgressComponent } from "./components/pages/project-progress/project-progress.component";
+import { RegisterComponent } from "./components/register/register.component";
+import { ReactiveFormsModule } from "@angular/forms";
+import { HttpClientModule } from "@angular/common/http";
+import { LoginComponent } from './components/login/login.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+
 
 @NgModule({
   declarations: [
@@ -25,9 +31,18 @@ import { ProjectProgressComponent } from "./components/pages/project-progress/pr
     ProjectProgressComponent,
     FooterComponent,
     AccDropupComponent,
-    LoginButtonComponent
+    LoginButtonComponent,
+    RegisterComponent,
+    LoginComponent,
+    UserProfileComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, NgbModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgbModule,
+    ReactiveFormsModule,
+    HttpClientModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
