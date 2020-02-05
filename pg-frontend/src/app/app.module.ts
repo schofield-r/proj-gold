@@ -16,13 +16,11 @@ import { ProjectProgressComponent } from "./components/pages/project-progress/pr
 import { RegisterComponent } from "./components/register/register.component";
 import { ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
-import { LoginComponent } from './components/login/login.component';
-import { UserProfileComponent } from './components/user-profile/user-profile.component';
-
+import { LoginComponent } from "./components/login/login.component";
 import { ProjOverviewTabsetComponent } from "./components/bootstrap/proj-overview-tabset/proj-overview-tabset.component";
 import { ProjectCardComponent } from "./components/cards/project-card/project-card.component";
-import { ProjectUpdateCardComponent } from './components/cards/project-update-card/project-update-card.component';
-import { BrowseComponent } from './components/pages/browse/browse.component';
+import { ProjectUpdateCardComponent } from "./components/cards/project-update-card/project-update-card.component";
+import { BrowseComponent } from "./components/pages/browse/browse.component";
 
 @NgModule({
   declarations: [
@@ -38,7 +36,10 @@ import { BrowseComponent } from './components/pages/browse/browse.component';
     LoginButtonComponent,
     RegisterComponent,
     LoginComponent,
-    UserProfileComponent,
+    ProjOverviewTabsetComponent,
+    BrowseComponent,
+    ProjectCardComponent,
+    ProjectUpdateCardComponent
   ],
   imports: [
     BrowserModule,
@@ -46,10 +47,6 @@ import { BrowseComponent } from './components/pages/browse/browse.component';
     NgbModule,
     ReactiveFormsModule,
     HttpClientModule
-    ProjOverviewTabsetComponent,
-    ProjectCardComponent,
-    ProjectUpdateCardComponent,
-    BrowseComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
