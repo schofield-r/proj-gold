@@ -16,12 +16,17 @@ export class BrowseComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.http
-    //   .get<any>("https://project-gold-api.herokuapp.com/api/projects")
-    //   .subscribe(
-    //     data => console.log(data.projects),
-    //     error => console.error("There was an error!", error)
-    //   );
+    this.http
+      .get<any>(`https://project-gold-api.herokuapp.com/api/projects`)
+      .subscribe(
+        data =>
+          data.projects.map(project => {
+            if (project.status !== "Pitch") {
+              this.displayData.push(project);
+            }
+          }),
+        error => console.error("There was an error!", error)
+      );
   }
 
   selectorClicked(whichButton) {
@@ -35,12 +40,7 @@ export class BrowseComponent implements OnInit {
           data =>
             data.projects.map(project => {
               if (project.status !== "Pitch") {
-                console.log(
-                  "Title: ",
-                  project.project_title,
-                  " Status: ",
-                  project.status
-                );
+                this.displayData.push(project);
               }
             }),
           error => console.error("There was an error!", error)
