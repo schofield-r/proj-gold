@@ -22,6 +22,7 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 import { ProjOverviewTabsetComponent } from "./components/bootstrap/proj-overview-tabset/proj-overview-tabset.component";
 import { ProjectCardComponent } from "./components/cards/project-card/project-card.component";
 import { ProjectUpdateCardComponent } from './components/cards/project-update-card/project-update-card.component';
+import { BrowseComponent } from './components/pages/browse/browse.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { ProjectUpdateCardComponent } from './components/cards/project-update-ca
     HttpClientModule
     ProjOverviewTabsetComponent,
     ProjectCardComponent,
-    ProjectUpdateCardComponent
+    ProjectUpdateCardComponent,
+    BrowseComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

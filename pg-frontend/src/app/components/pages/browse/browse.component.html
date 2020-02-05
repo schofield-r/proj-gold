@@ -1,0 +1,30 @@
+<main class="browse-main">
+  <div class="browse-selector">
+    <button>projects</button>
+    <button>pitches</button>
+    <button>users</button>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div ngbDropdown class="d-inline-block">
+        <button
+          class="btn btn-outline-primary pg"
+          id="dropdownBasic1"
+          ngbDropdownToggle
+        >
+          sort by
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button ngbDropdownItem>Action - 1</button>
+          <button ngbDropdownItem>Another Action</button>
+          <button ngbDropdownItem>Something else is here</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div></div>
+
+  <app-project-card></app-project-card>
+</main>
