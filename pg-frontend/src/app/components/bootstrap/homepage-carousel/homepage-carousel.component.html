@@ -7,7 +7,12 @@
 >
   <ng-template ngbSlide *ngFor="let img of images; index as i">
     <div class="carousel-caption">
-      <h3>My slide {{ i + 1 }} title</h3>
+      <h3
+        class="carousel-caption-text"
+        style="font-family: Saira Condensed; font-size: 4rem;"
+      >
+        Project {{ i + 1 }}
+      </h3>
     </div>
     <a
       href="https://www.google.fr/?q=Number+{{ i + 1 }}"

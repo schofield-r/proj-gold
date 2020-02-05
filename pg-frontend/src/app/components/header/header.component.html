@@ -1,8 +1,18 @@
 <header>
   <img class="logo" src="../../../assets/img/PG-logo.png" />
+
   <div class="header-controls">
     <app-nav-dropdown class="nav-dropdown"></app-nav-dropdown>
-    <!-- <button>login</button> -->
-    <app-login-button></app-login-button>
+    <div *ngIf="!mySwitch; else elseBlock">
+      <app-login-button (click)="clicked()"></app-login-button>
+    </div>
+    <ng-template #elseBlock>
+      <div>
+        <img
+          class="avatar-hexagon"
+          src="../../../assets/img/PG-avatar-hexagon.png"
+        />
+      </div>
+    </ng-template>
   </div>
 </header>

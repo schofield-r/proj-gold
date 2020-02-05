@@ -15,6 +15,11 @@ header {
   width: 5rem;
 }
 
+.avatar-hexagon {
+  height: auto;
+  width: 3rem;
+}
+
 .header-controls {
   display: flex;
   align-items: center;

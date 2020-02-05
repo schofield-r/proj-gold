@@ -1,4 +1,64 @@
-.project-overview-header {
+.project-overview-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1rem 3rem;
+}
+
+.project-overview-container * {
+  font-family: "Saira Condensed", Arial, Helvetica, sans-serif;
   color: white;
-  font-size: 10rem;
+}
+
+.project-overview-container h1 {
+  font-size: 4rem;
+}
+
+.project-overview-subheader {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.project-overview-subheader * {
+  margin: 0;
+  margin-right: 2rem;
+}
+
+.btn.btn-outline-primary.pg {
+  color: white;
+  border-color: white;
+  border-width: 2px;
+  font-family: "Saira Condensed";
+  font-weight: 300;
+  outline: none;
+  box-shadow: none;
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+.btn.btn-outline-primary.pg:hover {
+  background-color: #303030;
+}
+
+.btn.btn-outline-primary.pg.like {
+  border-radius: 50%;
+}
+
+.btn.btn-outline-primary.pg.like:hover {
+  color: crimson;
+}
+
+.tabset {
+  position: relative;
+  top: -3rem;
+  width: 100%;
+}
+
+@media only screen and (max-width: 1150px) {
+  .tabset {
+    margin-top: 0.5rem;
+    position: static;
+  }
 }

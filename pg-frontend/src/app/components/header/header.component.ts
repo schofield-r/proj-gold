@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { NavDropdownComponent } from "../bootstrap/nav-dropdown/nav-dropdown.component";
 
@@ -8,7 +8,16 @@ import { NavDropdownComponent } from "../bootstrap/nav-dropdown/nav-dropdown.com
   styleUrls: ["./header.component.css"]
 })
 export class HeaderComponent implements OnInit {
-  constructor() {}
+  @Output() loginSwitch = new EventEmitter();
+  @Input() mySwitch: boolean;
+
+  clicked() {
+    this.loginSwitch.emit();
+  }
+
+  constructor() {
+    this.mySwitch = false;
+  }
 
   ngOnInit() {}
 }

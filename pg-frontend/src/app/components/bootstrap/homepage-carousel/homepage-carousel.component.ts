@@ -1,4 +1,5 @@
 import { Component, ViewChild } from "@angular/core";
+
 import {
   NgbCarousel,
   NgbSlideEvent,
@@ -10,9 +11,11 @@ import {
   templateUrl: "./homepage-carousel.component.html"
 })
 export class HomepageCarouselComponent {
-  images = [62, 83, 466, 965, 982, 1043, 738].map(
-    n => `https://picsum.photos/id/${n}/900/500`
-  );
+  image1 = "assets/img/project-images/Project-1-image.jpg";
+  image2 = "assets/img/project-images/Project-2-image.jpg";
+  image3 = "assets/img/project-images/Project-3-image.jpg";
+  image4 = "assets/img/project-images/Project-4-image.jpg";
+  images = [this.image1, this.image2, this.image3, this.image4];
 
   paused = false;
   unpauseOnArrow = false;

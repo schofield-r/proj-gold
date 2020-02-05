@@ -19,6 +19,9 @@ import { HttpClientModule } from "@angular/common/http";
 import { LoginComponent } from './components/login/login.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
+import { ProjOverviewTabsetComponent } from "./components/bootstrap/proj-overview-tabset/proj-overview-tabset.component";
+import { ProjectCardComponent } from "./components/cards/project-card/project-card.component";
+import { ProjectUpdateCardComponent } from './components/cards/project-update-card/project-update-card.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +45,9 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
     NgbModule,
     ReactiveFormsModule,
     HttpClientModule
+    ProjOverviewTabsetComponent,
+    ProjectCardComponent,
+    ProjectUpdateCardComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
