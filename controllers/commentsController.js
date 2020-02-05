@@ -1,11 +1,16 @@
-var _a = require('../models/commentsModel'), fetchCommentById = _a.fetchCommentById, removeCommentById = _a.removeCommentById;
-exports.getCommentById = function (req, res, next) {
-    var comment_id = req.params.comment_id;
-    fetchCommentById(comment_id).then(function (comment) { return res.status(200).send(comment); });
+const {
+  fetchCommentById,
+  removeCommentById
+} = require('../models/commentsModel');
+
+exports.getCommentById = (req, res, next) => {
+  const { comment_id } = req.params;
+  fetchCommentById(comment_id).then(comment => res.status(200).send(comment));
 };
-exports.deleteCommentById = function (req, res, next) {
-    var comment_id = req.params.comment_id;
-    removeCommentById(comment_id).then(function (comment) {
-        return res.status(204).send({ msg: 'comment deleted' });
-    });
+
+exports.deleteCommentById = (req, res, next) => {
+  const { comment_id } = req.params;
+  removeCommentById(comment_id).then(comment =>
+    res.status(204).send({ msg: 'comment deleted' })
+  );
 };

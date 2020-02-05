@@ -22,21 +22,18 @@ projectsRouter.route("/").get(getAllProjects);
 //to update status
 projectsRouter.route("/:project_id/status").patch(patchStatus);
 
-// projectsRouter.route("/:project_id/lead_project").patch(patchToProject);
+projectsRouter.route("/:project_id/lead_project").patch(patchToProject);
 
-// projectsRouter.route("/:project_id/collaborate").post(postCollaborator);
+projectsRouter.route("/:project_id/collaborate").post(postCollaborator);
 
-projectsRouter
-  .route("/:project_id/tags")
-  // .post(postTagsToProjectTags)
-  // .patch(patchProjectTags)
-  // .delete(deleteTagsfromProjectTags);
+projectsRouter.route("/:project_id/tags")
+.post(postTagsToProjectTags).delete(deleteTagsfromProjectTags);
+// .patch(patchProjectTags)
 
-projectsRouter
-  .route("/:project_id")
-  .get(getProjectById)
-  // .patch(patchVote)
-  // .delete(deleteProject);
+
+projectsRouter.route("/:project_id").get(getProjectById)
+.patch(patchVote)
+.delete(deleteProject);
 // .all(methodNotAllowed);
 
 projectsRouter

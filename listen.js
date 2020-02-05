@@ -1,3 +1,5 @@
-var app = require('./app');
-var _a = process.env.PORT, PORT = _a === void 0 ? 9090 : _a;
-app.listen(PORT, function () { return console.log("Listening on " + PORT + "..."); });
+const app = require('./app');
+
+const { PORT = 9090 } = process.env;
+
+app.listen(PORT, () => console.log(`Listening on ${PORT}...`));

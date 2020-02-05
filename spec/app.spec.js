@@ -1,5 +1,5 @@
 process.env.NODE_ENV = "test";
-const {app} = require("../app");
+const { app } = require("../app");
 const request = require("supertest");
 const connection = require("../db/connection");
 const chai = require("chai");
@@ -11,12 +11,13 @@ chai.use(chaiSorted);
 describe("/api", () => {
   beforeEach(() => connection.seed.run());
   after(() => connection.destroy());
-  describe.only("GET /projects", () => {
+  describe("GET /projects", () => {
     it("200 response, gets all projects with sort order defaulting to DESC", () => {
       return request(app)
         .get("/api/projects")
         .expect(200)
         .then(res => {
+          // console.log(res.body)
           expect(res.body.projects[0]).to.contain.keys(
             "project_id",
             "created_by",
@@ -26,14 +27,14 @@ describe("/api", () => {
             "votes",
             "project_title"
           );
-          expect(res.body.projects).to.be.sortedBy("date_posted", {
+          expect(res.body.projects).to.be.sortedBy("votes", {
             descending: true
           });
         });
     });
     it("200 response, gets all projects that are in testing phase", () => {
       return request(app)
-        .get("/api/projects?status=testing")
+        .get("/api/projects?status=Testing")
         .expect(200)
         .then(res => {
           expect(res.body.projects[0]).to.contain.keys(
@@ -46,7 +47,7 @@ describe("/api", () => {
             "votes",
             "project_title"
           );
-          expect(res.body.projects[0].status).to.equal("testing");
+          expect(res.body.projects[0].status).to.equal("Testing");
         });
     });
   });
@@ -66,7 +67,7 @@ describe("/api", () => {
             description:
               "ullamco reprehenderit deserunt ipsum ullamco pariatur est magna nulla ea excepteur labore labore sunt culpa tempor ullamco amet velit duis",
             project_title: "HIVEDOM",
-            date_posted: 1163852514171
+            date_posted: "2006-11-18T12:21:54.171Z"
           });
         });
     });
@@ -85,7 +86,7 @@ describe("/api", () => {
         .send({ votes: 1 })
         .expect(200)
         .then(res => {
-          expect(res.body.project.votes).to.equal(1);
+          expect(res.body.project.votes).to.equal(57);
         });
     });
   });
@@ -93,33 +94,34 @@ describe("/api", () => {
     it("200 response, patches status of project and returns updated project", () => {
       return request(app)
         .patch("/api/projects/1/status")
-        .send({ status: testing })
+        .send({ status: "Testing" })
         .expect(200)
-        .then(res.body.project.status)
-        .to.equal("testing");
+        .then(res => {
+          expect(res.body.project.status).to.equal("Testing");
+        });
     });
   });
   describe("PATCH /projects/:project_id/lead_project", () => {
     it("200 response, patches a pitch to a project by a dev- adding a new description and a project-leader", () => {
       return request(app)
         .patch("/api/projects/2/lead_project")
-        .send({ description: "this is a project", project_leader: "user1" })
+        .send({ description: "this is a project", project_leader: "Angel" })
         .expect(200)
         .then(res => {
-          expect(res.body.project.project_leader).to.equal("user1");
+          expect(res.body.project.project_leader).to.equal("Angel");
           expect(res.body.project.description).to.equal("this is a project");
         });
     });
   });
   describe("POST /projects/:project_id/tags", () => {
-    it("204 response, posts tags to the projects_tags table with the amount of people needed for each tag", () => {
+    it("201 response, posts tags to the projects_tags table with the amount of people needed for each tag", () => {
       return request(app)
         .post("/api/projects/1/tags")
         .send({ tag_id: 1, count: 2 })
-        .expect(204)
+        .expect(201)
         .then(res => {
-          expect(res.body.tag.count).to.equal(2);
-          expect(res.body.tag.tag_id).to.equal(1);
+          expect(res.body.projectTag.tag_count).to.equal(2);
+          expect(res.body.projectTag.tag_id).to.equal(1);
         });
     });
   });
@@ -132,17 +134,28 @@ describe("/api", () => {
     });
   });
   describe("POST /projects/:project_id/collaborate", () => {
-    it("201 response, posts a project collaborator and the tag they have selected to contribute the skill of to the project_collaborators table", () => {
+    it("201 response, send back empty array if user is trying to collaborate on a project with a tag they dont have", () => {
       return request(app)
         .post("/api/projects/7/collaborate")
-        .send({ tag_id: 10, username: "userTest" })
-        .expect(204)
+        .send({ tag_id: 10, username: "Angel" })
+        .expect(201)
         .then(res => {
-          expect(res.body.project_collaborator.tag_id).to.equal(10);
+          // console.log(res.body)
+          expect(res.body.length).to.equal(0);
         });
     });
+     it("201 response, posts a project collaborator and the tag they have selected to contribute the skill of to the project_collaborators table", () => {
+       return request(app)
+         .post("/api/projects/10/collaborate")
+         .send({ tag_id: 3, username: "JackJon" })
+         .expect(201)
+         .then(res => {
+           console.log(res.body);
+           expect(res.body[0].tag_id).to.equal(3);
+         });
+     });
   });
-  describe.only("GET /projects/:project_id/comments", () => {
+  describe("GET /projects/:project_id/comments", () => {
     it("200 response, gets a projects comments", () => {
       return request(app)
         .get("/api/projects/1/comments")
@@ -159,12 +172,12 @@ describe("/api", () => {
         });
     });
   });
-  describe.only("POST /projects/:project_id/comments", () => {
+  describe("POST /projects/:project_id/comments", () => {
     it("201 response, ", () => {
       return request(app)
         .post("/api/projects/1/comments")
-        .send({ created_by: 'dave', body: "this is a comment" })
-        .expect(204)
+        .send({ created_by: "dave", body: "this is a comment" })
+        .expect(201)
         .then(res => {
           expect(res.body.comment).to.contain.keys(
             "comment_id",
@@ -189,7 +202,8 @@ describe("/api", () => {
       return request(app)
         .get("/api/comments/1")
         .expect(200)
-        .then(res => {console.log(res.body.comment)
+        .then(res => {
+          console.log(res.body.comment);
           expect(res.body.comment).to.eql({
             project_id: 1,
             comment_id: 1,
@@ -292,7 +306,8 @@ describe("/api", () => {
         .post("/api/users/ben/user_tags")
         .send({ tag_id: 18 })
         .expect(201)
-        .then(res => {console.log(res.body)
+        .then(res => {
+          console.log(res.body);
           expect(res.body.tag).to.eql({ username: "ben", tag_id: 18 });
         });
     });
