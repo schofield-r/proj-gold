@@ -12,18 +12,18 @@
   font-size: 2rem;
   height: 70vh;
   display: flex;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .left-column {
   width: calc(100% - 500px);
-  overflow-y: scroll;
+  padding: 1rem;
 }
 
 .right-column {
-  width: 480px;
-  margin-left: 20px;
-  display: flex;
-  align-items: center;
+  min-width: 480px;
+  padding: 10px 30px 10px 20px;
 }
 
 .tab-content h2,
