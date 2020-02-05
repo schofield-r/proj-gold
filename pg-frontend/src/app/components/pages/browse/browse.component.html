@@ -1,11 +1,37 @@
 <main class="browse-main">
   <div class="browse-selector">
-    <button class="selector-button">projects</button>
-    <button class="selector-button">pitches</button>
-    <button class="selector-button">users</button>
+    <button class="selector-button" (click)="selectorClicked('projects')">
+      projects
+    </button>
+    <button class="selector-button" (click)="selectorClicked('pitches')">
+      pitches
+    </button>
+    <button class="selector-button" (click)="selectorClicked('users')">
+      users
+    </button>
   </div>
 
-  <div class="row">
+  <h1 style="color: white;">{{ selected }}</h1>
+
+  <ng-container *ngIf="selected === 'projects'; else pitchesUsersBlock">
+    <h1>PRO</h1>
+  </ng-container>
+  <ng-template #pitchesUsersBlock>
+    <ng-container *ngIf="selected === 'pitches'; else usersBlock">
+      <h1>PIT</h1>
+    </ng-container>
+  </ng-template>
+  <ng-template #usersBlock>
+    <h1>USE</h1>
+  </ng-template>
+
+  <ul>
+    <li *ngFor="let item of displayData" style="color: white;">
+      <app-project-card [data]="item"></app-project-card>
+    </li>
+  </ul>
+
+  <!-- <div class="row">
     <div class="col">
       <div ngbDropdown class="d-inline-block">
         <button
@@ -22,9 +48,9 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <div></div>
 
-  <app-project-card></app-project-card>
+  <!-- <app-project-card></app-project-card> -->
 </main>
