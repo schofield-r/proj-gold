@@ -1,6 +1,44 @@
 .btn.btn-outline-primary.pg {
   color: black;
   border-color: black;
+  background-color: transparent;
   font-family: "Saira Condensed";
   border-width: 2px;
+  box-shadow: none;
+}
+
+.btn.btn-outline-primary.pg:hover,
+.btn.btn-outline-primary.pg:focus {
+  background-color: black;
+  color: white;
+}
+
+.pg-dropdown-menu {
+  padding: 0;
+  box-shadow: 0 0 1rem rgba(255, 255, 255, 0.5);
+  border: 2px solid black;
+}
+
+button.pg-dropdown {
+  padding: 1rem 2rem;
+  border: 1px solid white;
+  border-top: none;
+  font-family: "Saira Condensed";
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button.pg-dropdown:first-child {
+  border: 1px solid white;
+}
+
+button.dropdown-item:hover {
+  background-color: black;
+  color: white;
+}
+
+button.pg-active {
+  background-color: black;
+  color: white;
 }
