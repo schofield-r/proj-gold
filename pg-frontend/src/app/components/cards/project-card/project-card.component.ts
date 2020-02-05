@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import projectCardImage from "../../../../assets/img/Pitch-1-image.jpg";
+// import projectCardImage from "../../../../assets/img/Pitch-1-image.jpg";
 
 @Component({
   selector: "app-project-card",
@@ -7,7 +7,8 @@ import projectCardImage from "../../../../assets/img/Pitch-1-image.jpg";
   styleUrls: ["./project-card.component.css"]
 })
 export class ProjectCardComponent implements OnInit {
-  image = projectCardImage;
+  image = "assets/img/Pitch-1-image.jpg";
+
   constructor() {}
   ngOnInit() {}
 }
