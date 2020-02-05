@@ -21,6 +21,8 @@ import { ProjOverviewTabsetComponent } from "./components/bootstrap/proj-overvie
 import { ProjectCardComponent } from "./components/cards/project-card/project-card.component";
 import { ProjectUpdateCardComponent } from "./components/cards/project-update-card/project-update-card.component";
 import { BrowseComponent } from "./components/pages/browse/browse.component";
+import { PitchFormComponent } from './components/pitch-form/pitch-form.component';
+
 
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ import { BrowseComponent } from "./components/pages/browse/browse.component";
     ProjOverviewTabsetComponent,
     BrowseComponent,
     ProjectCardComponent,
-    ProjectUpdateCardComponent
+    ProjectUpdateCardComponent,
+    PitchFormComponent
   ],
   imports: [
     BrowserModule,

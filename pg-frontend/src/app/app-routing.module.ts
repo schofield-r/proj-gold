@@ -7,10 +7,12 @@ import { ProjectProgressComponent } from "./components/pages/project-progress/pr
 import { BrowseComponent } from "./components/pages/browse/browse.component";
 import { RegisterComponent } from "./components/register/register.component";
 import { LoginComponent } from "./components/login/login.component";
+import { PitchFormComponent } from "./components/pitch-form/pitch-form.component";
 
 const routes: Routes = [
   { path: "browse", component: BrowseComponent },
   { path: "register", component: RegisterComponent },
+  { path: "pitch", component: PitchFormComponent },
   { path: "login", component: LoginComponent },
   { path: "project-overview", component: ProjectOverviewComponent },
   { path: "project-progress", component: ProjectProgressComponent },
