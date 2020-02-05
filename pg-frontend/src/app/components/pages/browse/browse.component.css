@@ -5,3 +5,35 @@
   align-items: center;
   position: relative;
 }
+
+.selector-button {
+  color: white;
+  border-color: white;
+  background-color: black;
+  border-width: 2px;
+  font-family: "Saira Condensed";
+  font-weight: 300;
+  outline: none;
+  box-shadow: none;
+}
+
+.selector-button:hover {
+  color: black;
+  background-color: white;
+  outline: none;
+  box-shadow: none;
+}
+
+.selector-button:active {
+  background-color: white;
+  color: black;
+  outline: none;
+  box-shadow: none;
+}
+
+.selector-button:focus {
+  background-color: white;
+  color: black;
+  outline: none;
+  box-shadow: none;
+}
