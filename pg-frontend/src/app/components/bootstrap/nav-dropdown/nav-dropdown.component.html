@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col">
-    <div ngbDropdown class="d-inline-block">
+    <div ngbDropdown class="d-inline-block pg">
       <button
         class="btn btn-outline-primary pg"
         id="dropdownBasic1"
@@ -8,10 +8,36 @@
       >
         Navigation
       </button>
-      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-        <button ngbDropdownItem>Action - 1</button>
-        <button ngbDropdownItem>Another Action</button>
-        <button ngbDropdownItem>Something else is here</button>
+      <div
+        class="pg-dropdown-menu"
+        ngbDropdownMenu
+        aria-labelledby="dropdownBasic1"
+      >
+        <button
+          ngbDropdownItem
+          routerLink=""
+          class="pg-dropdown"
+          routerLinkActive="pg-active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          Home
+        </button>
+        <button
+          ngbDropdownItem
+          routerLink="/project-overview"
+          class="pg-dropdown"
+          routerLinkActive="pg-active"
+        >
+          Project Overview
+        </button>
+        <button
+          ngbDropdownItem
+          routerLink="/project-progress"
+          class="pg-dropdown"
+          routerLinkActive="pg-active"
+        >
+          Project Progress
+        </button>
       </div>
     </div>
   </div>

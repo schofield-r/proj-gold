@@ -4,6 +4,7 @@ header {
   justify-content: space-between;
   background-color: white;
   position: fixed;
+  z-index: 3;
   top: 0;
   left: 0;
   width: 100%;
@@ -26,9 +27,5 @@ header {
 }
 
 .header-controls * {
-  margin-left: 1rem;
-}
-
-.nav-dropdown {
-  border-color: black;
+  margin-left: 0.5rem;
 }
