@@ -16,12 +16,12 @@ import { ProjectProgressComponent } from "./components/pages/project-progress/pr
 import { RegisterComponent } from "./components/register/register.component";
 import { ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
-import { LoginComponent } from './components/login/login.component';
-import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { LoginComponent } from "./components/login/login.component";
+import { UserProfileComponent } from "./components/user-profile/user-profile.component";
 
 import { ProjOverviewTabsetComponent } from "./components/bootstrap/proj-overview-tabset/proj-overview-tabset.component";
 import { ProjectCardComponent } from "./components/cards/project-card/project-card.component";
-import { ProjectUpdateCardComponent } from './components/cards/project-update-card/project-update-card.component';
+import { ProjectUpdateCardComponent } from "./components/cards/project-update-card/project-update-card.component";
 
 @NgModule({
   declarations: [
@@ -37,14 +37,14 @@ import { ProjectUpdateCardComponent } from './components/cards/project-update-ca
     LoginButtonComponent,
     RegisterComponent,
     LoginComponent,
-    UserProfileComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
     ProjOverviewTabsetComponent,
     ProjectCardComponent,
     ProjectUpdateCardComponent
