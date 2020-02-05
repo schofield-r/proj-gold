@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import projectCardImage from "../../../../assets/img/Pitch-1-image.jpg";
+import * as projectCardImage from "../../../../assets/img/Pitch-1-image.jpg";
+// const projectCardImage = require("../../../../assets/img/Pitch-1-image.jpg");
 
 @Component({
   selector: "app-project-card",
@@ -7,7 +8,7 @@ import projectCardImage from "../../../../assets/img/Pitch-1-image.jpg";
   styleUrls: ["./project-card.component.css"]
 })
 export class ProjectCardComponent implements OnInit {
-  image = projectCardImage;
+  image: ImageBitmap = projectCardImage;
   constructor() {}
   ngOnInit() {}
 }
