@@ -13,6 +13,12 @@ import { AccDropupComponent } from "./components/bootstrap/acc-dropup/acc-dropup
 import { LoginButtonComponent } from "./components/bootstrap/login-button/login-button.component";
 import { ProjectOverviewComponent } from "./components/pages/project-overview/project-overview.component";
 import { ProjectProgressComponent } from "./components/pages/project-progress/project-progress.component";
+import { RegisterComponent } from "./components/register/register.component";
+import { ReactiveFormsModule } from "@angular/forms";
+import { HttpClientModule } from "@angular/common/http";
+import { LoginComponent } from './components/login/login.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+
 import { ProjOverviewTabsetComponent } from "./components/bootstrap/proj-overview-tabset/proj-overview-tabset.component";
 import { ProjectCardComponent } from "./components/cards/project-card/project-card.component";
 import { ProjectUpdateCardComponent } from './components/cards/project-update-card/project-update-card.component';
@@ -30,12 +36,21 @@ import { BrowseComponent } from './components/pages/browse/browse.component';
     FooterComponent,
     AccDropupComponent,
     LoginButtonComponent,
+    RegisterComponent,
+    LoginComponent,
+    UserProfileComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgbModule,
+    ReactiveFormsModule,
+    HttpClientModule
     ProjOverviewTabsetComponent,
     ProjectCardComponent,
     ProjectUpdateCardComponent,
     BrowseComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, NgbModule],
   providers: [],
   bootstrap: [AppComponent]
 })
