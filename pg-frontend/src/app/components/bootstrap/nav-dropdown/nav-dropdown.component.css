@@ -26,6 +26,7 @@ button.pg-dropdown {
   font-family: "Saira Condensed";
   font-size: 1.5rem;
   font-weight: bold;
+  cursor: pointer;
 }
 
 button.pg-dropdown:first-child {
