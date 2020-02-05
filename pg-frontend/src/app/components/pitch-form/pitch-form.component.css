@@ -1,0 +1,48 @@
+h2 {
+  color: rgb(219, 219, 125);
+  font-family: Saira Condensed;
+  max-width: 600px;
+  margin: auto;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.pitch-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 600px;
+  margin: 0 auto;
+}
+
+form {
+  text-align: right;
+  color: rgb(219, 219, 125);
+  font-family: Saira Condensed;
+  max-width: 800px;
+  margin: auto;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+label {
+  width: 150px;
+  vertical-align: text-top;
+}
+
+input {
+  min-width: 400px;
+  padding-bottom: 10px;
+}
+textarea {
+  min-width: 400px;
+  margin-top: 20px;
+}
+
+/* .description {
+  height: 150px;
+} */
+
+/* label {
+  text-align: left;
+} */
