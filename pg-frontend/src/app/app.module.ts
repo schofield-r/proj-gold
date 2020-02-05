@@ -17,6 +17,11 @@ import { RegisterComponent } from "./components/register/register.component";
 import { ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { LoginComponent } from "./components/login/login.component";
+<<<<<<< HEAD
+=======
+import { UserProfileComponent } from "./components/user-profile/user-profile.component";
+
+>>>>>>> 09c4a281fb41a3deeac38b849e2daa01c4f7158d
 import { ProjOverviewTabsetComponent } from "./components/bootstrap/proj-overview-tabset/proj-overview-tabset.component";
 import { ProjectCardComponent } from "./components/cards/project-card/project-card.component";
 import { ProjectUpdateCardComponent } from "./components/cards/project-update-card/project-update-card.component";
@@ -36,17 +41,29 @@ import { BrowseComponent } from "./components/pages/browse/browse.component";
     LoginButtonComponent,
     RegisterComponent,
     LoginComponent,
+<<<<<<< HEAD
     ProjOverviewTabsetComponent,
     BrowseComponent,
     ProjectCardComponent,
     ProjectUpdateCardComponent
+=======
+    UserProfileComponent
+>>>>>>> 09c4a281fb41a3deeac38b849e2daa01c4f7158d
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     ReactiveFormsModule,
+<<<<<<< HEAD
     HttpClientModule
+=======
+    HttpClientModule,
+    ProjOverviewTabsetComponent,
+    ProjectCardComponent,
+    ProjectUpdateCardComponent,
+    BrowseComponent
+>>>>>>> 09c4a281fb41a3deeac38b849e2daa01c4f7158d
   ],
   providers: [],
   bootstrap: [AppComponent]
