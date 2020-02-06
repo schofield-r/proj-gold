@@ -25,7 +25,7 @@ exports.insertUser = (
     })
     .returning('*')
     .then(user => {
-      return  user ;
+      return user;
     });
 };
 
@@ -54,17 +54,17 @@ exports.removeUser = username => {
 };
 
 exports.insertUserTags = (username, tag_id) => {
-  console.log('in model')
+  console.log('in model');
   return connection('user_tags')
     .insert({ username: username, tag_id: tag_id })
     .returning('*')
     .then(tag => {
-      return { tag:tag[0] };
+      return { tag: tag[0] };
     });
 };
 
 exports.removeTags = (username, tag_id) => {
-  return connection("user_tags")
+  return connection('user_tags')
     .where({
       username: username,
       tag_id: tag_id
@@ -74,33 +74,55 @@ exports.removeTags = (username, tag_id) => {
       if (rows_deleted === 0)
         return Promise.reject({
           status: 404,
-          msg: "tag not deleted"
+          msg: 'tag not deleted'
         });
     });
 };
 
 exports.insertUserRole = (username, role_id) => {
   console.log(username, role_id);
-  return connection("user_preferences")
+  return connection('user_preferences')
     .insert({
       username: username,
       role_id: role_id
     })
-    .returning("*")
+    .returning('*')
     .then(userRole => {
-      return { userRole:userRole[0] };
+      return { userRole: userRole[0] };
     });
 };
 
 exports.removeUserRole = (username, role_id) => {
-  return connection("user_preferences")
+  return connection('user_preferences')
     .where({ username: username, role_id: role_id })
     .del()
     .then(rows_deleted => {
       if (rows_deleted === 0)
         return Promise.reject({
           status: 404,
-          msg: "preference not deleted"
+          msg: 'preference not deleted'
         });
+    });
+};
+
+exports.fetchProjectDigestById = username => {
+  console.log(username);
+  return connection
+    .select(
+      'p.project_id',
+      'u.tag_id',
+      'a.tag_id',
+      'a.project_id',
+      'u.username',
+      'a.tag_count'
+    )
+    .from('projects AS p')
+    .join('project_tags AS a', 'p.project_id', 'a.project_id')
+    .join('user_tags AS u', 'a.tag_id', 'u.tag_id')
+    .where('u.username', '=', username)
+    .where('a.tag_count', '>', 0)
+    .returning('*')
+    .then(projects => {
+      console.log(projects);
     });
 };

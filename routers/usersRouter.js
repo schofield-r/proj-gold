@@ -1,4 +1,4 @@
-const usersRouter = require("express").Router();
+const usersRouter = require('express').Router();
 const {
   postUser,
   getUser,
@@ -6,24 +6,27 @@ const {
   postTags,
   postUserRole,
   deleteUserRole,
-  deleteTags
-} = require("../controllers/usersController");
+  deleteTags,
+  getProjectDigestById
+} = require('../controllers/usersController');
 
-usersRouter.route("/").post(postUser);
+usersRouter.route('/').post(postUser);
 
 usersRouter
-  .route("/:username/update_preferences")
+  .route('/:username/update_preferences')
   .post(postUserRole)
   .delete(deleteUserRole);
 
 usersRouter
-  .route("/:username")
+  .route('/:username')
   .get(getUser)
   .delete(deleteUser);
 
 usersRouter
-  .route("/:username/user_tags")
+  .route('/:username/user_tags')
   .post(postTags)
   .delete(deleteTags);
+
+usersRouter.route('/:username/project_digest').get(getProjectDigestById);
 
 module.exports = { usersRouter };
