@@ -21,8 +21,12 @@ import { ProjOverviewTabsetComponent } from "./components/bootstrap/proj-overvie
 import { ProjectCardComponent } from "./components/cards/project-card/project-card.component";
 import { ProjectUpdateCardComponent } from "./components/cards/project-update-card/project-update-card.component";
 import { BrowseComponent } from "./components/pages/browse/browse.component";
-import { PitchFormComponent } from './components/pitch-form/pitch-form.component';
-
+import { PitchFormComponent } from "./components/pitch-form/pitch-form.component";
+import { WebSpeechComponent } from "./components/web-speech/web-speech.component";
+import { WebSpeechModule } from "./components/web-speech/web-speech.module";
+import { SharedModule } from "./shared/shared.module";
+import { FormsModule } from "@angular/forms";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -42,14 +46,20 @@ import { PitchFormComponent } from './components/pitch-form/pitch-form.component
     BrowseComponent,
     ProjectCardComponent,
     ProjectUpdateCardComponent,
-    PitchFormComponent
+    PitchFormComponent,
+    // WebSpeechModule,
+    // WebSpeechComponent
   ],
   imports: [
+    SharedModule,
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     ReactiveFormsModule,
-    HttpClientModule
+    WebSpeechModule,
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

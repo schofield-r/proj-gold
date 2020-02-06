@@ -8,6 +8,7 @@ import { BrowseComponent } from "./components/pages/browse/browse.component";
 import { RegisterComponent } from "./components/register/register.component";
 import { LoginComponent } from "./components/login/login.component";
 import { PitchFormComponent } from "./components/pitch-form/pitch-form.component";
+import { WebSpeechComponent } from "./components/web-speech/web-speech.component";
 
 const routes: Routes = [
   { path: "browse", component: BrowseComponent },
@@ -16,7 +17,11 @@ const routes: Routes = [
   { path: "login", component: LoginComponent },
   { path: "project/:id", component: ProjectOverviewComponent },
   { path: "project-progress", component: ProjectProgressComponent },
-  { path: "", component: HomepageComponent }
+  { path: "", component: HomepageComponent },
+  {
+    path: "web-speech",
+    component: WebSpeechComponent
+  }
 ];
 
 @NgModule({
