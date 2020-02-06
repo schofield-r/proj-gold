@@ -129,8 +129,7 @@ exports.getSuggestedProjectsById = (req, res, next) => {
       // then get projects based on those tags
     })
     .then(a => {
-      const b = a.flat();
-      console.log(b, '<<<<<< DOUG');
-      return res.status(200).send({ result: JSON.stringify(b) });
+      // const b = a.flat();
+      return res.status(200).send(a);
     });
 };
