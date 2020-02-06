@@ -22,6 +22,7 @@ import { ProjectCardComponent } from "./components/cards/project-card/project-ca
 import { ProjectUpdateCardComponent } from "./components/cards/project-update-card/project-update-card.component";
 import { BrowseComponent } from "./components/pages/browse/browse.component";
 import { PitchFormComponent } from './components/pitch-form/pitch-form.component';
+import { SignUpComponent } from './components/pages/sign-up/sign-up.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { PitchFormComponent } from './components/pitch-form/pitch-form.component
     BrowseComponent,
     ProjectCardComponent,
     ProjectUpdateCardComponent,
-    PitchFormComponent
+    PitchFormComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
