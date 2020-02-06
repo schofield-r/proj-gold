@@ -119,9 +119,7 @@ exports.fetchProjectDigestById = username => {
     .where('u.username', '=', username)
     .where('a.tag_count', '>', 0)
     .returning('*')
-    .then(projects => {
-      console.log(projects);
-    });
+    .then(projects => projects.map(project => project.project_id));
 };
 
 //stage 1

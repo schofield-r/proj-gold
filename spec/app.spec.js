@@ -314,13 +314,13 @@ describe('/api', () => {
         .expect(204);
     });
   });
-  describe('GET /users/:usernam/project_digest', () => {
+  describe.only('GET /users/:usernam/project_digest', () => {
     it('200 response, returns a personilised user digest', () => {
       return request(app)
         .get('/api/users/JackJon/project_digest')
         .expect(200)
         .then(res => {
-          // console.log(res.body);
+          console.log(res.body);
         });
     });
   });
@@ -330,7 +330,7 @@ describe('/api', () => {
         .get('/api/users/JackJon/suggested_projects')
         .expect(200)
         .then(res => {
-          console.log(res.body);
+          console.log(res.body, 'a');
         });
     });
   });
