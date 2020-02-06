@@ -119,5 +119,8 @@ exports.getSuggestedProjectsById = (req, res, next) => {
       // output: list of projects who have those tags
       // then get projects based on those tags
     })
-    .then(a => a.flat());
+    .then(a => {
+      const b = a.flat();
+      return res.status(200).send(b);
+    });
 };
