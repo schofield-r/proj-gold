@@ -1,25 +1,33 @@
-<div class="page" style="background-color: white;">
-  <!-- <a href="/" class="big-link">I am here to pitch project ideas</a>
+<!-- <a href="/" class="big-link">I am here to pitch project ideas</a>
   <br />
   <a href="/" class="big-link">
     I am here to contribute to projects I find interesting
   </a> -->
 
-  <form style="color: black;">
-    <h3>Software Skills</h3>
-    <div *ngFor="let skill of softwareSkillList">
-      <label> <input type="checkbox" /> {{ skill }} </label>
-    </div>
-    <h3>Other Skills</h3>
-    <div *ngFor="let skill of otherSkillList">
-      <label> <input type="checkbox" /> {{ skill }} </label>
-    </div>
-    <h3>
-      Something that makes sense, is concise and is in no way offensive here
-      <---- good luck hombres
-    </h3>
-    <div *ngFor="let group of groups">
-      <label> <input type="checkbox" /> {{ group }} </label>
-    </div>
+<div class="onboarding-form-container">
+  <form class="onboarding-form">
+    <h1>Personalise Your Experience...</h1>
+    <h2>Tech Specific Skills:</h2>
+    <ul class="software-skills-list">
+      <li class="list-items" *ngFor="let skill of softwareSkillList">
+        <label> <input type="checkbox" /> {{ skill }} </label>
+      </li>
+    </ul>
+    <h2>Other Skills:</h2>
+    <ul class="other-skills-list">
+      <li class="list-items" *ngFor="let skill of otherSkillList">
+        <label> <input type="checkbox" /> {{ skill }} </label>
+      </li>
+    </ul>
+    <h2>People you are passionate about helping:</h2>
+    <ul class="tag-list">
+      <li class="list-items" *ngFor="let group of groups">
+        <label> <input type="checkbox" /> {{ group }} </label>
+      </li>
+      <li class="list-items">
+        <label> <input type="checkbox" /> Select all </label>
+      </li>
+    </ul>
+    <button class="next-button">Next >></button>
   </form>
 </div>
