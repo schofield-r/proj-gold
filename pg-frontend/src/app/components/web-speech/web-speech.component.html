@@ -1,14 +1,30 @@
-<div class="center">
-  <button mat-fab (click)="startButton($event)">
-    <mat-icon *ngIf="!recognizing">mic</mat-icon>
-    <mat-icon *ngIf="recognizing">stop</mat-icon>
-  </button>
-</div>
+<!-- <div class="center"></div> -->
 
 <form>
   <mat-form-field class="speech-result-width">
-    <textarea matInput [value]="finalTranscript" placeholder="Speech Input Result" rows="15"></textarea>
+    <h2>Pitch a project</h2>
+    <!-- <div class="pitch-form"> -->
+    <div class="title">
+      <label>Title</label>
+      <input type="text" />
+    </div>
+
+    <div class="description">
+      <label>Description</label>
+      <textarea
+        matInput
+        [value]="finalTranscript"
+        
+        rows="15"
+      ></textarea>
+    </div>
   </mat-form-field>
 </form>
+<button mat-fab (click)="startButton($event)">
+  <mat-icon *ngIf="!recognizing">mic</mat-icon>
+  <mat-icon *ngIf="recognizing">stop</mat-icon>
+</button>
 
-<mat-card *ngIf="notification" class="notification">{{notification}}</mat-card>
+<mat-card *ngIf="notification" class="notification">{{
+  notification
+}}</mat-card>
