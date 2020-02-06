@@ -1,0 +1,16 @@
+.homepage {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100%;
+  /* background-color: teal; */
+}
+
+.featured-projects-header {
+  font-family: "Saira Condensed";
+  font-weight: 300;
+  font-size: 6rem;
+}

@@ -30,6 +30,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { SignUpComponent } from "./components/pages/sign-up/sign-up.component";
 import { ProjectCommentCardComponent } from "./components/cards/project-comment-card/project-comment-card.component";
 import { SignUpNextComponent } from "./components/pages/sign-up-next/sign-up-next.component";
+import { LoggedInHomepageComponent } from "./components/pages/logged-in-homepage/logged-in-homepage.component";
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { SignUpNextComponent } from "./components/pages/sign-up-next/sign-up-nex
     // WebSpeechComponent
     SignUpComponent,
     ProjectCommentCardComponent,
-    SignUpNextComponent
+    SignUpNextComponent,
+    LoggedInHomepageComponent
   ],
   imports: [
     SharedModule,
