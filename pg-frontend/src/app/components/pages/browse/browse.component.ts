@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { ProjectCardComponent } from "../../cards/project-card/project-card.component";
 
@@ -8,7 +8,7 @@ import { ProjectCardComponent } from "../../cards/project-card/project-card.comp
   styleUrls: ["./browse.component.css"]
 })
 export class BrowseComponent implements OnInit {
-  selected: string;
+  @Input() selected: string;
   displayData: Array<object> = [];
 
   constructor(private http: HttpClient) {
@@ -19,12 +19,14 @@ export class BrowseComponent implements OnInit {
     this.http
       .get<any>(`https://project-gold-api.herokuapp.com/api/projects`)
       .subscribe(
-        data =>
+        data => {
+          this.displayData = [];
           data.projects.map(project => {
             if (project.status !== "Pitch") {
               this.displayData.push(project);
             }
-          }),
+          });
+        },
         error => console.error("There was an error!", error)
       );
   }
@@ -33,36 +35,35 @@ export class BrowseComponent implements OnInit {
     this.selected = whichButton;
     console.log(whichButton);
 
-    if (whichButton === "projects")
+    if (whichButton === "Projects") {
       this.http
         .get<any>(`https://project-gold-api.herokuapp.com/api/projects`)
         .subscribe(
-          data =>
+          data => {
+            this.displayData = [];
             data.projects.map(project => {
               if (project.status !== "Pitch") {
                 this.displayData.push(project);
               }
-            }),
+            });
+          },
           error => console.error("There was an error!", error)
         );
-
-    if (whichButton === "pitches")
+    }
+    if (whichButton === "Pitches") {
       this.http
         .get<any>(`https://project-gold-api.herokuapp.com/api/projects`)
         .subscribe(
-          data =>
+          data => {
+            this.displayData = [];
             data.projects.map(project => {
               if (project.status === "Pitch") {
-                // console.log(
-                //   "Title: ",
-                //   project.project_title,
-                //   " Status: ",
-                //   project.status
                 this.displayData.push(project);
-                console.log(this.displayData);
               }
-            }),
+            });
+          },
           error => console.error("There was an error!", error)
         );
+    }
   }
 }

@@ -11,7 +11,6 @@ export class ProjectCardComponent implements OnInit {
   @Input() data: object;
 
   constructor() {}
-  ngOnInit() {
-    console.log(this.data, "<----this.data");
-  }
+
+  ngOnInit() {}
 }
