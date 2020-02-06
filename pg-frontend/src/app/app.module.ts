@@ -27,6 +27,8 @@ import { WebSpeechModule } from "./components/web-speech/web-speech.module";
 import { SharedModule } from "./shared/shared.module";
 import { FormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SignUpComponent } from "./components/pages/sign-up/sign-up.component";
+import { ProjectCommentCardComponent } from "./components/cards/project-comment-card/project-comment-card.component";
 
 @NgModule({
   declarations: [
@@ -49,6 +51,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PitchFormComponent,
     // WebSpeechModule,
     // WebSpeechComponent
+    SignUpComponent,
+    ProjectCommentCardComponent
   ],
   imports: [
     SharedModule,

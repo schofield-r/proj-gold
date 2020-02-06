@@ -7,6 +7,7 @@ import { ProjectProgressComponent } from "./components/pages/project-progress/pr
 import { BrowseComponent } from "./components/pages/browse/browse.component";
 import { RegisterComponent } from "./components/register/register.component";
 import { LoginComponent } from "./components/login/login.component";
+import { SignUpComponent } from "./components/pages/sign-up/sign-up.component";
 import { PitchFormComponent } from "./components/pitch-form/pitch-form.component";
 import { WebSpeechComponent } from "./components/web-speech/web-speech.component";
 
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: "register", component: RegisterComponent },
   { path: "pitch", component: PitchFormComponent },
   { path: "login", component: LoginComponent },
+  { path: "sign-up", component: SignUpComponent },
   { path: "project/:id", component: ProjectOverviewComponent },
   { path: "project-progress", component: ProjectProgressComponent },
   { path: "", component: HomepageComponent },

@@ -1,14 +1,18 @@
 <div class="project-card-container">
   <figure>
-    <img [src]="image" alt="Trulli" />
-    <figcaption><h2>Caption</h2></figcaption>
+    <img [src]="image" alt="project cover image" />
+    <figcaption>
+      <h2>{{ data.project_title }}</h2>
+    </figcaption>
   </figure>
   <div class="project-card-text">
-    <h3>Title: {{ data.project_title }}</h3>
-    <h4>Status: {{ data.status }}</h4>
-    <p>Posted: {{ data.date_posted }}</p>
-    <p>Votes: {{ data.votes }}</p>
-    <p>Description: {{ data.description }}</p>
-    <p>Posted by: {{ data.created_by }}</p>
+    <h3><span class="bold">Title: </span>{{ data.project_title }}</h3>
+    <h4><span class="bold">Status: </span>{{ data.status }}</h4>
+    <p><span class="bold">Posted: </span>{{ data.date_posted }}</p>
+    <p class="data-votes"><span class="bold">Votes: </span>{{ data.votes }}</p>
+    <p class="data-description">
+      <span class="bold">Description: </span>{{ data.description }}
+    </p>
+    <p><span class="bold">Posted by: </span>{{ data.created_by }}</p>
   </div>
 </div>

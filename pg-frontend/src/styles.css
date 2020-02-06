@@ -1,5 +1,9 @@
 @import "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css";
 
+* {
+  font-family: "Saira Condensed", Arial, Helvetica, sans-serif;
+}
+
 body {
   background-color: black;
   margin: 0;

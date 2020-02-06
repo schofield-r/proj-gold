@@ -6,12 +6,10 @@ import { Component, OnInit, Input } from "@angular/core";
   styleUrls: ["./project-card.component.css"]
 })
 export class ProjectCardComponent implements OnInit {
-  image = "assets/img/Pitch-1-image.jpg";
-
   @Input() data: object;
+  image = `https://picsum.photos/240/456?random=${Math.random()}`;
 
   constructor() {}
-  ngOnInit() {
-    console.log(this.data, "<----this.data");
-  }
+
+  ngOnInit() {}
 }

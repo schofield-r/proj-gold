@@ -1,60 +1,48 @@
 <main class="browse-main">
   <div class="browse-selector">
     <button
-      class="selector-button"
-      (click)="selectorClicked('projects')"
+      class="selector-button-left selector-button"
+      (click)="selectorClicked('Projects')"
       autofocus
     >
-      projects
+      Projects
     </button>
-    <button class="selector-button" (click)="selectorClicked('pitches')">
-      pitches
+    <button
+      class="selector-button-right selector-button"
+      (click)="selectorClicked('Pitches')"
+    >
+      Pitches
     </button>
-    <button class="selector-button" (click)="selectorClicked('users')">
-      users
-    </button>
+    <!-- <button class="selector-button" (click)="selectorClicked('Users')">
+      Users
+    </button> -->
   </div>
 
-  <h1 style="color: white;">{{ selected }}</h1>
-
-  <ng-container *ngIf="selected === 'projects'; else pitchesUsersBlock">
-    <h1>PRO</h1>
-  </ng-container>
-  <ng-template #pitchesUsersBlock>
-    <ng-container *ngIf="selected === 'pitches'; else usersBlock">
-      <h1>PIT</h1>
-    </ng-container>
-  </ng-template>
-  <ng-template #usersBlock>
-    <h1>USE</h1>
-  </ng-template>
-
-  <ul>
-    <li *ngFor="let item of displayData" style="color: white;">
-      <app-project-card [data]="item"></app-project-card>
-    </li>
-  </ul>
-
-  <!-- <div class="row">
-    <div class="col">
-      <div ngbDropdown class="d-inline-block">
-        <button
-          class="btn btn-outline-primary pg"
-          id="dropdownBasic1"
-          ngbDropdownToggle
-        >
-          sort by
-        </button>
-        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-          <button ngbDropdownItem>Action - 1</button>
-          <button ngbDropdownItem>Another Action</button>
-          <button ngbDropdownItem>Something else is here</button>
-        </div>
-      </div>
-    </div>
-  </div> -->
-
-  <div></div>
-
-  <!-- <app-project-card></app-project-card> -->
+  <div class="data-list-container">
+    <ul class="data-list">
+      <svg
+        class="chevron chevron-left"
+        xmlns="http://www.w3.org/2000/svg"
+        height="24"
+        viewBox="0 0 24 24"
+        width="24"
+      >
+        <path fill="white" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+        <path d="M0 0h24v24H0z" fill="none" />
+      </svg>
+      <li class="data-list-item" *ngFor="let item of displayData">
+        <app-project-card [data]="item"></app-project-card>
+      </li>
+      <svg
+        class="chevron chevron-right"
+        xmlns="http://www.w3.org/2000/svg"
+        height="24"
+        viewBox="0 0 24 24"
+        width="24"
+      >
+        <path fill="white" d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+        <path d="M0 0h24v24H0z" fill="none" />
+      </svg>
+    </ul>
+  </div>
 </main>
