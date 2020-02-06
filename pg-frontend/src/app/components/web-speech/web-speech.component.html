@@ -1,30 +1,31 @@
 <!-- <div class="center"></div> -->
+<div class="form-container">
+  <form>
+    <mat-form-field class="pg speech-result-width">
+      <h1>Pitch a Project:</h1>
+      <!-- <div class="pitch-form"> -->
+      <div class="title">
+        <label>Title:</label>
+        <input type="text" />
+      </div>
 
-<form>
-  <mat-form-field class="speech-result-width">
-    <h2>Pitch a project</h2>
-    <!-- <div class="pitch-form"> -->
-    <div class="title">
-      <label>Title</label>
-      <input type="text" />
-    </div>
+      <div class="description">
+        <label>Description:</label>
+        <textarea matInput [value]="finalTranscript" rows="15"></textarea>
+      </div>
+      <div class="button-container">
+        <button class="next-button">
+          Pitch!
+        </button>
+      </div>
+    </mat-form-field>
+  </form>
+  <button class="record" mat-fab (click)="startButton($event)">
+    <mat-icon *ngIf="!recognizing">mic</mat-icon>
+    <mat-icon *ngIf="recognizing">stop</mat-icon>
+  </button>
 
-    <div class="description">
-      <label>Description</label>
-      <textarea
-        matInput
-        [value]="finalTranscript"
-        
-        rows="15"
-      ></textarea>
-    </div>
-  </mat-form-field>
-</form>
-<button mat-fab (click)="startButton($event)">
-  <mat-icon *ngIf="!recognizing">mic</mat-icon>
-  <mat-icon *ngIf="recognizing">stop</mat-icon>
-</button>
-
-<mat-card *ngIf="notification" class="notification">{{
-  notification
-}}</mat-card>
+  <mat-card *ngIf="notification" class="notification">{{
+    notification
+  }}</mat-card>
+</div>
