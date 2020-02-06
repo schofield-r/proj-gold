@@ -1,0 +1,43 @@
+<div class="sign-up-container">
+  <form class="sign-up-form" [formGroup]="signup" (ngSubmit)="update()">
+    <h1>Sign up</h1>
+    <div class="text-inputs">
+      <label>
+        Username:
+        <input
+          type="text"
+          formControlName="username"
+          placeholder="username"
+          required
+        />
+      </label>
+      <label>
+        Password:
+        <input
+          type="password"
+          formControlName="password"
+          placeholder="password"
+          required
+        />
+      </label>
+      <label>
+        Email:
+        <input
+          type="email"
+          formControlName="email"
+          placeholder="email"
+          required
+        />
+      </label>
+    </div>
+    <label>
+      <input type="checkbox" formControlName="privacy" required />
+      Keep me up to date with personalised emails
+    </label>
+    <label>
+      <button formControlName="submit">
+        Sign me up!
+      </button>
+    </label>
+  </form>
+</div>
