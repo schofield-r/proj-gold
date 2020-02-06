@@ -26,31 +26,27 @@ export class RegisterComponent implements OnInit {
       alert("good");
       this.http
         .post("/api/userCreate", this.userForm.value)
-        .subscribe(response => {
-          console.log("repsonsei ", response);
-        });
+        .subscribe(response => {});
     } else {
       alert("Please fill all required");
-      console.log("NOT GOOD ");
-      // console.log(this.userForm.value);
     }
   }
 }
 
-                    // onSubmit() {
-                    //   if (this.userForm.valid) {
-                    //     alert("User form is valid!!");
-                    //   } else {
-                    //     alert("User form is not valid!!");
-                    //   }
-                    // }
-                  
-                    // onSubmit() {
-                    //   if (this.userForm.valid) {
-                    //     this.http
-                    //       .post("/api/userCreate", this.userForm.value)
-                    //       .subscribe(response => {
-                    //         console.log("repsonse ", response);
-                    //       });
-                    //   }
-                    // }
+// onSubmit() {
+//   if (this.userForm.valid) {
+//     alert("User form is valid!!");
+//   } else {
+//     alert("User form is not valid!!");
+//   }
+// }
+
+// onSubmit() {
+//   if (this.userForm.valid) {
+//     this.http
+//       .post("/api/userCreate", this.userForm.value)
+//       .subscribe(response => {
+//         console.log("repsonse ", response);
+//       });
+//   }
+// }

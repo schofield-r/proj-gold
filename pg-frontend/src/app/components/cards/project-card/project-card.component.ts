@@ -6,10 +6,13 @@ import { Component, OnInit, Input } from "@angular/core";
   styleUrls: ["./project-card.component.css"]
 })
 export class ProjectCardComponent implements OnInit {
-  @Input() data: object;
+  @Input() data: any;
+  date: string = "";
   image = `https://picsum.photos/240/456?random=${Math.random()}`;
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.date = new Date(this.data.date_posted).toUTCString();
+  }
 }
