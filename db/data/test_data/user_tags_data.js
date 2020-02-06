@@ -23,7 +23,6 @@ module.exports = [
   { tag_id: 3, username: 'HireUs?' },
   { tag_id: 5, username: 'HireUs?' },
   { tag_id: 6, username: 'HireUs?' },
-  // { tag_id: 7, username: 'HireUs?' },
   { tag_id: 8, username: 'HireUs?' },
   { tag_id: 9, username: 'HireUs?' },
   { tag_id: 3, username: 'InDisguise' },
