@@ -1,33 +1,22 @@
 <main class="browse-main">
   <div class="browse-selector">
     <button
-      class="selector-button"
+      class="selector-button-left selector-button"
       (click)="selectorClicked('Projects')"
       autofocus
     >
       Projects
     </button>
-    <button class="selector-button" (click)="selectorClicked('Pitches')">
+    <button
+      class="selector-button-right selector-button"
+      (click)="selectorClicked('Pitches')"
+    >
       Pitches
     </button>
     <!-- <button class="selector-button" (click)="selectorClicked('Users')">
       Users
     </button> -->
   </div>
-
-  <!-- <h1 class="card-type-title" style="color: white;">{{ selected }}</h1> -->
-
-  <!-- <ng-container *ngIf="selected === 'projects'; else pitchesUsersBlock">
-    <h1>PRO</h1>
-  </ng-container>
-  <ng-template #pitchesUsersBlock>
-    <ng-container *ngIf="selected === 'pitches'; else usersBlock">
-      <h1>PIT</h1>
-    </ng-container>
-  </ng-template>
-  <ng-template #usersBlock>
-    <h1>USE</h1>
-  </ng-template> -->
 
   <div class="data-list-container">
     <ul class="data-list">
@@ -56,27 +45,4 @@
       </svg>
     </ul>
   </div>
-
-  <!-- <div class="row">
-    <div class="col">
-      <div ngbDropdown class="d-inline-block">
-        <button
-          class="btn btn-outline-primary pg"
-          id="dropdownBasic1"
-          ngbDropdownToggle
-        >
-          sort by
-        </button>
-        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-          <button ngbDropdownItem>Action - 1</button>
-          <button ngbDropdownItem>Another Action</button>
-          <button ngbDropdownItem>Something else is here</button>
-        </div>
-      </div>
-    </div>
-  </div> -->
-
-  <div></div>
-
-  <!-- <app-project-card></app-project-card> -->
 </main>
