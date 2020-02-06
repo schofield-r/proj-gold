@@ -1,4 +1,5 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, SimpleChanges } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
 
 @Component({
   selector: "app-proj-overview-tabset",
@@ -6,12 +7,44 @@ import { Component, Input } from "@angular/core";
   styleUrls: ["./proj-overview-tabset.component.css"]
 })
 export class ProjOverviewTabsetComponent {
-  constructor() {
-    console.log(this.data, "proj-overview-tabset ^^^^^^");
-  }
+  constructor(private http: HttpClient) {}
+
   currentJustify = "end";
 
   @Input() data: any;
 
-  ngOnInit() {}
+  comments: Array<any> = [];
+
+  ngOnInit() {
+    console.log(this.data, "init data");
+
+    this.http
+      .get<any>(
+        `https://project-gold-api.herokuapp.com/api/projects/${this.data.project_id}/comments`
+      )
+      .subscribe(
+        data => {
+          this.comments = [...data];
+          console.log(this.comments);
+        },
+        error => console.error("There was an error!", error)
+      );
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    console.log(this.data, "changes data");
+
+    this.http
+      .get<any>(
+        `https://project-gold-api.herokuapp.com/api/projects/${this.data.project_id}/comments`
+      )
+      .subscribe(
+        data => {
+          console.log(data, "<--- api data?");
+          this.comments = [...data.comments];
+          console.log(this.comments);
+        },
+        error => console.error("There was an error!", error)
+      );
+  }
 }
