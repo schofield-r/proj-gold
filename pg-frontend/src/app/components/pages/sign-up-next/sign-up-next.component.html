@@ -1,0 +1,25 @@
+<div class="page" style="background-color: white;">
+  <!-- <a href="/" class="big-link">I am here to pitch project ideas</a>
+  <br />
+  <a href="/" class="big-link">
+    I am here to contribute to projects I find interesting
+  </a> -->
+
+  <form style="color: black;">
+    <h3>Software Skills</h3>
+    <div *ngFor="let skill of softwareSkillList">
+      <label> <input type="checkbox" /> {{ skill }} </label>
+    </div>
+    <h3>Other Skills</h3>
+    <div *ngFor="let skill of otherSkillList">
+      <label> <input type="checkbox" /> {{ skill }} </label>
+    </div>
+    <h3>
+      Something that makes sense, is concise and is in no way offensive here
+      <---- good luck hombres
+    </h3>
+    <div *ngFor="let group of groups">
+      <label> <input type="checkbox" /> {{ group }} </label>
+    </div>
+  </form>
+</div>

@@ -26,9 +26,10 @@ import { WebSpeechComponent } from "./components/web-speech/web-speech.component
 import { WebSpeechModule } from "./components/web-speech/web-speech.module";
 import { SharedModule } from "./shared/shared.module";
 import { FormsModule } from "@angular/forms";
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { SignUpComponent } from "./components/pages/sign-up/sign-up.component";
 import { ProjectCommentCardComponent } from "./components/cards/project-comment-card/project-comment-card.component";
+import { SignUpNextComponent } from "./components/pages/sign-up-next/sign-up-next.component";
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { ProjectCommentCardComponent } from "./components/cards/project-comment-
     // WebSpeechModule,
     // WebSpeechComponent
     SignUpComponent,
-    ProjectCommentCardComponent
+    ProjectCommentCardComponent,
+    SignUpNextComponent
   ],
   imports: [
     SharedModule,
