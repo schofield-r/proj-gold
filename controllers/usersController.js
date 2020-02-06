@@ -110,7 +110,6 @@ exports.getSuggestedProjectsById = (req, res, next) => {
       const filtUsernames = usernames.filter(
         user => user.username !== username
       );
-
       return Promise.all(
         filtUsernames.map(username => userTagId(username.username, tag_id))
       );
@@ -129,7 +128,7 @@ exports.getSuggestedProjectsById = (req, res, next) => {
       // then get projects based on those tags
     })
     .then(a => {
-      // const b = a.flat();
-      return res.status(200).send(a);
+      const b = a.flat();
+      return res.status(200).send(b);
     });
 };
