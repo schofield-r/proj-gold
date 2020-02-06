@@ -5,11 +5,36 @@
   align-items: center;
 }
 
+.close {
+  position: absolute;
+  color: black;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 1rem;
+}
+
 .sign-up-container h1 {
   font-weight: bold;
+  margin: 1rem;
+}
+
+.sign-up-container button {
+  cursor: pointer;
+  margin-top: 1rem;
+  background-color: transparent;
+  border: 2px solid black;
+  color: black;
+  padding: 0.25rem 1.25rem;
+  border-radius: 4px;
+}
+
+.sign-up-container button:hover {
+  background-color: black;
+  color: white;
 }
 
 .sign-up-form {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
