@@ -6,32 +6,23 @@ const {
   postTags,
   postUserRole,
   deleteUserRole,
-  deleteTags,
-  getProjectDigestById,
-  getSuggestedProjectsById
+  deleteTags
 } = require('../controllers/usersController');
 
 usersRouter.route('/').post(postUser);
-
-usersRouter
-  .route('/:username/update_preferences')
-  .post(postUserRole)
-  .delete(deleteUserRole);
 
 usersRouter
   .route('/:username')
   .get(getUser)
   .delete(deleteUser);
 
+usersRouter('./:username/update_preferences')
+  .post(postUserRole)
+  .delete(deleteUserRole);
+
 usersRouter
   .route('/:username/user_tags')
   .post(postTags)
   .delete(deleteTags);
-
-usersRouter.route('/:username/project_digest').get(getProjectDigestById);
-
-usersRouter
-  .route('/:username/suggested_projects')
-  .get(getSuggestedProjectsById);
 
 module.exports = { usersRouter };

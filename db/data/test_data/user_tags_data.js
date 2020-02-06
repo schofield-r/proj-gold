@@ -19,5 +19,6 @@ module.exports = [
   { tag_id: 20, username: 'Override' },
   { tag_id: 22, username: 'Gary6' },
   { tag_id: 19, username: 'kirkley' },
-  { tag_id: 23, username: 'plaster' }
+  { tag_id: 23, username: 'plaster' },
+  { tag_id: 3, username: 'HireUs?' }
 ];

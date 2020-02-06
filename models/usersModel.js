@@ -14,8 +14,6 @@ exports.insertUser = (
   return connection('users')
     .insert({
       username: username,
-      first_name: first_name,
-      surname: surname,
       description: description,
       location: location,
       loc_radius: loc_radius,
@@ -106,7 +104,6 @@ exports.removeUserRole = (username, role_id) => {
 };
 
 exports.fetchProjectDigestById = username => {
-  console.log(username);
   return connection
     .select(
       'p.project_id',
@@ -126,3 +123,59 @@ exports.fetchProjectDigestById = username => {
       console.log(projects);
     });
 };
+
+//stage 1
+// input: username
+// output : tag_id
+//get the one tag for a user -> the one tag (id)
+
+exports.userTagId = (username, excludeTag) => {
+  return connection('user_tags')
+    .select('tag_id')
+    .where('username', '=', username)
+    .then(tag_ids => {
+      if (excludeTag) {
+        return tag_ids.filter(({ tag_id }) => tag_id !== excludeTag);
+      } else return tag_ids;
+    });
+};
+
+exports.usernamesFromTag = tag_id => {
+  return connection('user_tags')
+    .select('username')
+    .where('tag_id', '=', tag_id)
+    .then(users => users);
+};
+
+exports.getProjectFromProjectTags = tag_id => {
+  return connection('project_tags')
+    .select('project_tags.project_id')
+    .join('projects', 'projects.project_id', '=', 'project_tags.project_id')
+    .where('project_tags.tag_id', '=', tag_id)
+    .then(project_ids => {
+      return project_ids;
+    });
+};
+// exports.fetchSuggestedProjectsById = username => {
+//   const subquery = connection('user_tags')
+//     .select('tag_id')
+//     .where('username', '=', username)
+//     .returning('tag_id'); // all tags belonging to user
+//   return (
+//     connection('user_tags')
+//       .whereExists(function() {
+//         this.select('*')
+//           .from('user_tags')
+//           .where('user_tags.tag_id', '=', subquery);
+//       })
+//       // .andWhere('username', '!=', username)
+//       // .select('user_tags.tag_id')
+//       // .count('username')
+//       // .groupBy('user_tags.tag_id')
+//       // .having('user_tags.count', '>', 1)
+//       .returning('*')
+//       .then(suggestions => {
+//         console.log(suggestions);
+//       })
+//   );
+// };

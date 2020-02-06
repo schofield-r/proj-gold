@@ -220,8 +220,6 @@ describe('/api', () => {
       return request(app)
         .post('/api/users')
         .send({
-          first_name: 'ralf',
-          surname: 'markson',
           location: 'Liverpool',
           loc_radius: 0,
           description:
@@ -234,8 +232,6 @@ describe('/api', () => {
         .expect(201)
         .then(res => {
           expect(res.body.user).to.eql({
-            first_name: 'ralf',
-            surname: 'markson',
             location: 'Liverpool',
             loc_radius: 0,
             description:
@@ -256,8 +252,6 @@ describe('/api', () => {
         .then(res => {
           console.log(res.body.user);
           expect(res.body.user).to.eql({
-            first_name: 'Dixon',
-            surname: 'Howell',
             location: 'Birmingham',
             loc_radius: 20,
             description:
@@ -321,9 +315,19 @@ describe('/api', () => {
     });
   });
   describe('GET /users/:usernam/project_digest', () => {
-    it.only('200 response, returns a personilised user digest', () => {
+    it('200 response, returns a personilised user digest', () => {
       return request(app)
         .get('/api/users/JackJon/project_digest')
+        .expect(200)
+        .then(res => {
+          // console.log(res.body);
+        });
+    });
+  });
+  describe.only('GET /users/:username/suggested_projects', () => {
+    it('200 response, returns a suggested user digest', () => {
+      return request(app)
+        .get('/api/users/JackJon/suggested_projects')
         .expect(200)
         .then(res => {
           console.log(res.body);

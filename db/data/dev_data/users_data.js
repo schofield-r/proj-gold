@@ -1,7 +1,5 @@
 module.exports = [
   {
-    first_name: 'Dixon',
-    surname: 'Howell',
     location: 'Birmingham',
     loc_radius: 20,
     description:
@@ -12,8 +10,6 @@ module.exports = [
     digest_opt_in: false
   },
   {
-    first_name: 'Aimee',
-    surname: 'Carpenter',
     location: 'Liverpool',
     loc_radius: 1,
     description:
@@ -24,8 +20,6 @@ module.exports = [
     digest_opt_in: false
   },
   {
-    first_name: 'Hicks',
-    surname: 'Cox',
     location: 'Sheffield',
     loc_radius: 2,
     description:
@@ -36,8 +30,6 @@ module.exports = [
     digest_opt_in: true
   },
   {
-    first_name: 'Leblanc',
-    surname: 'Ashley',
     location: 'Chester',
     loc_radius: 5,
     description:
@@ -48,8 +40,6 @@ module.exports = [
     digest_opt_in: true
   },
   {
-    first_name: 'Nina',
-    surname: 'Peterson',
     location: 'Sheffield',
     loc_radius: 15,
     description:
@@ -60,8 +50,6 @@ module.exports = [
     digest_opt_in: false
   },
   {
-    first_name: 'Cara',
-    surname: 'Patel',
     location: 'Newcastle',
     loc_radius: 20,
     description:
@@ -72,8 +60,6 @@ module.exports = [
     digest_opt_in: false
   },
   {
-    first_name: 'Cox',
-    surname: 'Phelps',
     location: 'Liverpool',
     loc_radius: 15,
     description:
@@ -84,8 +70,6 @@ module.exports = [
     digest_opt_in: false
   },
   {
-    first_name: 'Tabatha',
-    surname: 'Becker',
     location: 'Birmingham',
     loc_radius: 0,
     description:
@@ -96,8 +80,6 @@ module.exports = [
     digest_opt_in: true
   },
   {
-    first_name: 'Lucinda',
-    surname: 'Irwin',
     location: 'Birmingham',
     loc_radius: 10,
     description:
@@ -108,8 +90,6 @@ module.exports = [
     digest_opt_in: true
   },
   {
-    first_name: 'Matilda',
-    surname: 'Burks',
     location: 'York',
     loc_radius: 1,
     description:
@@ -120,8 +100,6 @@ module.exports = [
     digest_opt_in: false
   },
   {
-    first_name: 'Nadia',
-    surname: 'Short',
     location: 'Birmingham',
     loc_radius: 0,
     description:
@@ -132,8 +110,6 @@ module.exports = [
     digest_opt_in: true
   },
   {
-    first_name: 'Simmons',
-    surname: 'Moss',
     location: 'Sheffield',
     loc_radius: 1,
     description:
@@ -144,8 +120,6 @@ module.exports = [
     digest_opt_in: false
   },
   {
-    first_name: 'Young',
-    surname: 'Harrington',
     location: 'Sheffield',
     loc_radius: 0,
     description:
@@ -156,8 +130,6 @@ module.exports = [
     digest_opt_in: false
   },
   {
-    first_name: 'Matthews',
-    surname: 'Brewer',
     location: 'London',
     loc_radius: 10,
     description:
@@ -168,8 +140,6 @@ module.exports = [
     digest_opt_in: true
   },
   {
-    first_name: 'Workman',
-    surname: 'Brown',
     location: 'Liverpool',
     loc_radius: 5,
     description:
@@ -180,8 +150,6 @@ module.exports = [
     digest_opt_in: true
   },
   {
-    first_name: 'Lakeisha',
-    surname: 'Camacho',
     location: 'London',
     loc_radius: 2,
     description:
@@ -192,8 +160,6 @@ module.exports = [
     digest_opt_in: false
   },
   {
-    first_name: 'Carter',
-    surname: 'Cummings',
     location: 'Newcastle',
     loc_radius: 10,
     description:
@@ -204,8 +170,6 @@ module.exports = [
     digest_opt_in: false
   },
   {
-    first_name: 'Garner',
-    surname: 'Campbell',
     location: 'Sheffield',
     loc_radius: 0,
     description:
@@ -216,8 +180,6 @@ module.exports = [
     digest_opt_in: false
   },
   {
-    first_name: 'Marcy',
-    surname: 'Kirk',
     location: 'York',
     loc_radius: 20,
     description:
@@ -228,8 +190,6 @@ module.exports = [
     digest_opt_in: false
   },
   {
-    first_name: 'Ray',
-    surname: 'Fowler',
     location: 'Sheffield',
     loc_radius: 10,
     description:
