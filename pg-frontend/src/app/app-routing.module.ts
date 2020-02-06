@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: "register", component: RegisterComponent },
   { path: "pitch", component: PitchFormComponent },
   { path: "login", component: LoginComponent },
-  { path: "project-overview", component: ProjectOverviewComponent },
+  { path: "project/:id", component: ProjectOverviewComponent },
   { path: "project-progress", component: ProjectProgressComponent },
   { path: "", component: HomepageComponent }
 ];

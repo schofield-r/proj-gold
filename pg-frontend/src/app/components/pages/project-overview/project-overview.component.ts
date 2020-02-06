@@ -1,5 +1,7 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { ProjOverviewTabsetComponent } from "../../bootstrap/proj-overview-tabset/proj-overview-tabset.component";
+import { ActivatedRoute } from "@angular/router";
+import { HttpClient } from "@angular/common/http";
 
 @Component({
   selector: "app-project-overview",
@@ -7,7 +9,25 @@ import { ProjOverviewTabsetComponent } from "../../bootstrap/proj-overview-tabse
   styleUrls: ["./project-overview.component.css"]
 })
 export class ProjectOverviewComponent implements OnInit {
-  constructor() {}
+  id: string;
+  displayData: object;
 
-  ngOnInit() {}
+  constructor(private route: ActivatedRoute, private http: HttpClient) {}
+
+  ngOnInit() {
+    this.id = this.route.snapshot.paramMap.get("id");
+
+    this.http
+      .get<any>(
+        `https://project-gold-api.herokuapp.com/api/projects/${this.id}`
+      )
+      .subscribe(
+        data => {
+          this.displayData = data.project;
+          console.log(data.project, "<------");
+          console.log(this.displayData, "project-overview");
+        },
+        error => console.error("There was an error!", error)
+      );
+  }
 }

@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 
 @Component({
   selector: "app-proj-overview-tabset",
@@ -6,5 +6,12 @@ import { Component } from "@angular/core";
   styleUrls: ["./proj-overview-tabset.component.css"]
 })
 export class ProjOverviewTabsetComponent {
+  constructor() {
+    console.log(this.data, "proj-overview-tabset ^^^^^^");
+  }
   currentJustify = "end";
+
+  @Input() data: any;
+
+  ngOnInit() {}
 }
