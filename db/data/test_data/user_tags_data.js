@@ -20,5 +20,13 @@ module.exports = [
   { tag_id: 22, username: 'Gary6' },
   { tag_id: 19, username: 'kirkley' },
   { tag_id: 23, username: 'plaster' },
-  { tag_id: 3, username: 'HireUs?' }
+  { tag_id: 3, username: 'HireUs?' },
+  { tag_id: 5, username: 'HireUs?' },
+  { tag_id: 6, username: 'HireUs?' },
+  { tag_id: 7, username: 'HireUs?' },
+  { tag_id: 8, username: 'HireUs?' },
+  { tag_id: 9, username: 'HireUs?' },
+  { tag_id: 3, username: 'InDisguise' },
+  { tag_id: 2, username: 'InDisguise' },
+  { tag_id: 10, username: 'InDisguise' }
 ];
