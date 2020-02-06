@@ -34,3 +34,12 @@
 .tab-content h3 {
   margin-top: 2rem;
 }
+
+ul {
+  display: block;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}

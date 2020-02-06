@@ -25,16 +25,16 @@
       <div class="tab-content">
         <div class="left-column">
           <h2>Project Progress</h2>
-          <app-project-update-card></app-project-update-card>
-          <app-project-update-card></app-project-update-card>
-          <app-project-update-card></app-project-update-card>
-          <app-project-update-card></app-project-update-card>
-          <app-project-update-card></app-project-update-card>
-          <app-project-update-card></app-project-update-card>
-          <app-project-update-card></app-project-update-card>
+          <ul>
+            <li *ngFor="let comment of comments">
+              <app-project-update-card
+                [comment]="comment"
+              ></app-project-update-card>
+            </li>
+          </ul>
         </div>
         <div class="right-column">
-          <app-project-card></app-project-card>
+          <h2>RIGHT COLUMN</h2>
         </div>
       </div>
     </ng-template>
@@ -45,8 +45,8 @@
     >
     <ng-template ngbTabContent>
       <div class="tab-content">
-        <h2>Project Comments</h2>
         <ul>
+          <h2>Project Comments</h2>
           <li *ngFor="let comment of comments">
             <app-project-comment-card
               [comment]="comment"

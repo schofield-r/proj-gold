@@ -8,7 +8,9 @@ import { Component, OnInit, Input, SimpleChanges } from "@angular/core";
 export class ProjectCommentCardComponent implements OnInit {
   @Input() comment: any;
   date: string = "";
+  image = `https://i.pravatar.cc/80?${Math.floor(Math.random() * 70)}`;
   constructor() {}
+  //
 
   ngOnInit() {
     this.date = new Date(this.comment.date_created).toUTCString();
