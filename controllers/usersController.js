@@ -12,8 +12,8 @@ const {
   userTagId,
   usernamesFromTag,
   getProjectFromProjectTags
-} = require("../models/usersModel");
-const { fetchProjectById } = require("../models/projectsModel.js");
+} = require('../models/usersModel');
+const { fetchProjectById } = require('../models/projectsModel.js');
 
 exports.postUser = (req, res, next) => {
   const {
@@ -48,7 +48,7 @@ exports.getUser = (req, res, next) => {
 exports.deleteUser = (req, res, next) => {
   const { username } = req.params;
   removeUser(username).then(user =>
-    res.status(204).send({ msg: "user deleted" })
+    res.status(204).send({ msg: 'user deleted' })
   );
 };
 
@@ -62,7 +62,7 @@ exports.deleteTags = (req, res, next) => {
   const { username } = req.params;
   const { tag_id } = req.body;
   removeTags(username, tag_id).then(tag =>
-    res.status(204).send({ msg: "tag deleted" })
+    res.status(204).send({ msg: 'tag deleted' })
   );
 };
 
@@ -76,7 +76,7 @@ exports.deleteUserRole = (req, res, next) => {
   const { username } = req.params;
   const { role_id } = req.body;
   removeUserRole(username, role_id).then(role =>
-    res.status(204).send({ msg: "user_role deleted" })
+    res.status(204).send({ msg: 'user_role deleted' })
   );
 };
 
@@ -84,11 +84,13 @@ exports.getProjectDigestById = (req, res, next) => {
   const { username } = req.params;
   fetchProjectDigestById(username).then(projectId =>
     // console.log(projectId)
-    Promise.all(projectId.map(project=>fetchProjectById(project))).then(projects => {
-      console.log(projects);
-      res.status(200).send(projects);
-    })
-   );
+    Promise.all(projectId.map(project => fetchProjectById(project))).then(
+      projects => {
+        console.log(projects);
+        res.status(200).send(projects);
+      }
+    )
+  );
 };
 
 exports.getSuggestedProjectsById = (req, res, next) => {
@@ -128,6 +130,6 @@ exports.getSuggestedProjectsById = (req, res, next) => {
     })
     .then(a => {
       const b = a.flat();
-      return res.status(200).send(b);
+      return res.status(200).send({ b });
     });
 };
