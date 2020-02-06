@@ -1,0 +1,30 @@
+textarea {
+  background-color: white;
+  font-size: large;
+  color: black;
+   font-size: xx-large
+}
+
+form {
+  font-size: xx-large
+}
+
+textarea {
+  min-width : 600px;
+}
+
+
+form {
+  /* text-align: right; */
+  color: rgb(219, 219, 125);
+  font-family: Saira Condensed;
+  max-width: 800px;
+  margin: auto;
+  /* font-size: 20px; */
+  /* margin-bottom: 20px; */
+}
+
+
+button {
+  margin-left: 150px;
+}
