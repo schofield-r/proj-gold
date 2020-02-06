@@ -33,7 +33,6 @@ export class BrowseComponent implements OnInit {
 
   selectorClicked(whichButton) {
     this.selected = whichButton;
-    console.log(whichButton);
 
     if (whichButton === "Projects") {
       this.http

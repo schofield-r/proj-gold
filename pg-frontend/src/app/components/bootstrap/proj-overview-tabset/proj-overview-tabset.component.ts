@@ -16,8 +16,6 @@ export class ProjOverviewTabsetComponent {
   comments: Array<any> = [];
 
   ngOnInit() {
-    console.log(this.data, "init data");
-
     this.http
       .get<any>(
         `https://project-gold-api.herokuapp.com/api/projects/${this.data.project_id}/comments`
@@ -25,24 +23,19 @@ export class ProjOverviewTabsetComponent {
       .subscribe(
         data => {
           this.comments = [...data];
-          console.log(this.comments);
         },
         error => console.error("There was an error!", error)
       );
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log(this.data, "changes data");
-
     this.http
       .get<any>(
         `https://project-gold-api.herokuapp.com/api/projects/${this.data.project_id}/comments`
       )
       .subscribe(
         data => {
-          console.log(data, "<--- api data?");
           this.comments = [...data.comments];
-          console.log(this.comments);
         },
         error => console.error("There was an error!", error)
       );

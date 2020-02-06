@@ -31,7 +31,11 @@
         <path d="M0 0h24v24H0z" fill="none" />
       </svg>
       <li class="data-list-item" *ngFor="let item of displayData">
-        <app-project-card [data]="item"></app-project-card>
+        <app-project-card
+          [data]="item"
+          routerLink="/project/{{ item.project_id }}"
+          routerLinkActive="pg-active"
+        ></app-project-card>
       </li>
       <svg
         class="chevron chevron-right"
