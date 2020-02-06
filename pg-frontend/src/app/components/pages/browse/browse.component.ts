@@ -12,7 +12,7 @@ export class BrowseComponent implements OnInit {
   displayData: Array<object> = [];
 
   constructor(private http: HttpClient) {
-    this.selected = "something";
+    this.selected = "Projects";
   }
 
   ngOnInit() {

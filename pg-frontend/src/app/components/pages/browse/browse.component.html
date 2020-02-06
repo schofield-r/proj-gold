@@ -2,22 +2,22 @@
   <div class="browse-selector">
     <button
       class="selector-button"
-      (click)="selectorClicked('projects')"
+      (click)="selectorClicked('Projects')"
       autofocus
     >
-      projects
+      Projects
     </button>
-    <button class="selector-button" (click)="selectorClicked('pitches')">
-      pitches
+    <button class="selector-button" (click)="selectorClicked('Pitches')">
+      Pitches
     </button>
-    <button class="selector-button" (click)="selectorClicked('users')">
-      users
+    <button class="selector-button" (click)="selectorClicked('Users')">
+      Users
     </button>
   </div>
 
-  <h1 style="color: white;">{{ selected }}</h1>
+  <h1 class="card-type-title" style="color: white;">{{ selected }}</h1>
 
-  <ng-container *ngIf="selected === 'projects'; else pitchesUsersBlock">
+  <!-- <ng-container *ngIf="selected === 'projects'; else pitchesUsersBlock">
     <h1>PRO</h1>
   </ng-container>
   <ng-template #pitchesUsersBlock>
@@ -27,13 +27,35 @@
   </ng-template>
   <ng-template #usersBlock>
     <h1>USE</h1>
-  </ng-template>
+  </ng-template> -->
 
-  <ul>
-    <li *ngFor="let item of displayData" style="color: white;">
-      <app-project-card [data]="item"></app-project-card>
-    </li>
-  </ul>
+  <div class="data-list-container">
+    <ul class="data-list">
+      <svg
+        class="chevron chevron-left"
+        xmlns="http://www.w3.org/2000/svg"
+        height="24"
+        viewBox="0 0 24 24"
+        width="24"
+      >
+        <path fill="white" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+        <path d="M0 0h24v24H0z" fill="none" />
+      </svg>
+      <li class="data-list-item" *ngFor="let item of displayData">
+        <app-project-card [data]="item"></app-project-card>
+      </li>
+      <svg
+        class="chevron chevron-right"
+        xmlns="http://www.w3.org/2000/svg"
+        height="24"
+        viewBox="0 0 24 24"
+        width="24"
+      >
+        <path fill="white" d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+        <path d="M0 0h24v24H0z" fill="none" />
+      </svg>
+    </ul>
+  </div>
 
   <!-- <div class="row">
     <div class="col">

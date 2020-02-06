@@ -7,6 +7,7 @@
 .project-card-container figure {
   height: 240px;
   background-color: grey;
+  border-radius: 15px 15px 0 0;
   margin-bottom: 0;
 }
 
@@ -37,10 +38,26 @@
 }
 
 .project-card-text {
+  position: relative;
   padding: 1rem;
+}
+
+.bold {
+  font-weight: bold;
 }
 
 p {
   margin: 1rem 0 0 0;
   font-size: 1.5rem;
+}
+
+.data-votes {
+  position: absolute;
+  top: -1px;
+  right: 20px;
+}
+
+.data-description {
+  height: 108px;
+  overflow: hidden;
 }
