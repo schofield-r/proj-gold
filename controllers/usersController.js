@@ -131,6 +131,6 @@ exports.getSuggestedProjectsById = (req, res, next) => {
     .then(a => {
       const b = a.flat();
       console.log(b, '<<<<<< DOUG');
-      return res.status(200).send({ result: b });
+      return res.status(200).send({ result: JSON.stringify(b) });
     });
 };
