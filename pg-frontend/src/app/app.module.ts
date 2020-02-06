@@ -31,6 +31,8 @@ import { SignUpComponent } from "./components/pages/sign-up/sign-up.component";
 import { ProjectCommentCardComponent } from "./components/cards/project-comment-card/project-comment-card.component";
 import { SignUpNextComponent } from "./components/pages/sign-up-next/sign-up-next.component";
 import { LoggedInHomepageComponent } from "./components/pages/logged-in-homepage/logged-in-homepage.component";
+import { PitchOverviewComponent } from "./components/pages/pitch-overview/pitch-overview.component";
+import { PitchToProjectComponent } from "./components/pages/pitch-to-project/pitch-to-project.component";
 
 @NgModule({
   declarations: [
@@ -56,7 +58,9 @@ import { LoggedInHomepageComponent } from "./components/pages/logged-in-homepage
     SignUpComponent,
     ProjectCommentCardComponent,
     SignUpNextComponent,
-    LoggedInHomepageComponent
+    LoggedInHomepageComponent,
+    PitchOverviewComponent,
+    PitchToProjectComponent
   ],
   imports: [
     SharedModule,

@@ -1,0 +1,39 @@
+<div class="project-overview-container">
+  <div class="project-overview-subheader">
+    <h1>{{ displayData.project_title }}</h1>
+    <button class="btn btn-outline-primary pg" type="button">Share</button>
+    <button class="btn btn-outline-primary pg like" type="button">❤</button>
+
+    <button routerLink="/pitch-to-project" routerLinkActive="pg-active">
+      GET THIS PITCH ROLLING INTO A PROJECT OR SUTIN
+    </button>
+    <!-- ^^^^ style me! ^^^^ -->
+  </div>
+  <ngb-tabset [justify]="currentJustify">
+    <ngb-tab>
+      <ng-template ngbTabTitle
+        ><span class="tab-title">overview</span></ng-template
+      >
+      <ng-template ngbTabContent>
+        <div class="tab-content">
+          <div class="left-column">
+            <h2>Project Overview</h2>
+            <p>
+              {{ displayData.description }}
+            </p>
+          </div>
+          <div class="right-column">
+            <app-project-card [data]="displayData"></app-project-card>
+          </div>
+        </div>
+      </ng-template>
+    </ngb-tab>
+  </ngb-tabset>
+</div>
+
+<!-- <app-proj-overview-tabset
+    class="tabset"
+    [data]="displayData"
+  ></app-proj-overview-tabset> -->
+
+<!-- </div> -->

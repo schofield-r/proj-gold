@@ -32,10 +32,21 @@
       </svg>
       <li class="data-list-item" *ngFor="let item of displayData">
         <app-project-card
+          *ngIf="item.project_id === 3; else elseBlock"
           [data]="item"
-          routerLink="/project/{{ item.project_id }}"
+          routerLink="/pitch/3"
           routerLinkActive="pg-active"
-        ></app-project-card>
+        >
+        </app-project-card>
+
+        <ng-template #elseBlock>
+          <app-project-card
+            [data]="item"
+            routerLink="/project/{{ item.project_id }}"
+            routerLinkActive="pg-active"
+          >
+          </app-project-card>
+        </ng-template>
       </li>
       <svg
         class="chevron chevron-right"
