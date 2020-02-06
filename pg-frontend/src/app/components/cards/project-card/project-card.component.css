@@ -4,6 +4,20 @@
   border-radius: 15px;
 }
 
+.project-card-container:hover {
+  cursor: pointer;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.7);
+  transform: scale(1.005);
+}
+
+.project-card-container:hover figcaption {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.project-card-container:hover h2 {
+  text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.7);
+}
+
 .project-card-container figure {
   height: 240px;
   background-color: grey;
@@ -26,6 +40,8 @@
 }
 
 .project-card-container figcaption h2 {
+  text-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.4);
+
   font-size: 4rem;
 }
 
