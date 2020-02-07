@@ -11,11 +11,27 @@ import {
   templateUrl: "./homepage-carousel.component.html"
 })
 export class HomepageCarouselComponent {
-  image1 = "assets/img/project-images/Project-1-image.jpg";
-  image2 = "assets/img/project-images/Project-2-image.jpg";
-  image3 = "assets/img/project-images/Project-3-image.jpg";
-  image4 = "assets/img/project-images/Project-4-image.jpg";
-  images = [this.image1, this.image2, this.image3, this.image4];
+  image1 = "assets/carousel-photos/1.jpg";
+  image2 = "assets/carousel-photos/2.jpg";
+  image3 = "assets/carousel-photos/3.jpg";
+  image4 = "assets/carousel-photos/4.jpg";
+  image5 = "assets/carousel-photos/5.jpg";
+  image6 = "assets/carousel-photos/6.jpg";
+  image7 = "assets/carousel-photos/7.jpg";
+  image8 = "assets/carousel-photos/8.jpg";
+  image9 = "assets/carousel-photos/9.jpg";
+
+  images = [
+    this.image1,
+    this.image2,
+    this.image3,
+    this.image4,
+    this.image5,
+    this.image6,
+    this.image7,
+    this.image8,
+    this.image9
+  ];
 
   paused = false;
   unpauseOnArrow = false;
