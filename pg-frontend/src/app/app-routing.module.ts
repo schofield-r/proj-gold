@@ -11,6 +11,9 @@ import { SignUpComponent } from "./components/pages/sign-up/sign-up.component";
 import { WebSpeechComponent } from "./components/web-speech/web-speech.component";
 import { SignUpNextComponent } from "./components/pages/sign-up-next/sign-up-next.component";
 import { HomepagePersonalisedComponent } from "./components/pages/homepage-personalised/homepage-personalised.component";
+import { LoggedInHomepageComponent } from "./components/pages/logged-in-homepage/logged-in-homepage.component";
+import { PitchOverviewComponent } from "./components/pages/pitch-overview/pitch-overview.component";
+import { PitchToProjectComponent } from "./components/pages/pitch-to-project/pitch-to-project.component";
 
 const routes: Routes = [
   { path: "browse", component: BrowseComponent },
@@ -22,7 +25,10 @@ const routes: Routes = [
   { path: "dashboard", component: HomepagePersonalisedComponent },
   { path: "", component: HomepageComponent },
   { path: "pitch", component: WebSpeechComponent },
-  { path: "sign-up-next", component: SignUpNextComponent }
+  { path: "sign-up-next", component: SignUpNextComponent },
+  { path: "logged-in-home", component: LoggedInHomepageComponent },
+  { path: "pitch/:id", component: PitchOverviewComponent },
+  { path: "pitch-to-project", component: PitchToProjectComponent }
 ];
 
 @NgModule({
