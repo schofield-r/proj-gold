@@ -104,6 +104,13 @@ ul::-webkit-scrollbar-thumb {
   background-color: #000000;
 }
 
+.list-spacer {
+  list-style: none;
+  color: white;
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
 /* ///////////////////////////////////////// */
 /* 
 .btn.btn-outline-primary.pg {

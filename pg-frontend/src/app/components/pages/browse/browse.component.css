@@ -77,6 +77,13 @@ ul {
   margin: 1rem;
 }
 
+.list-spacer {
+  list-style: none;
+  color: white;
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
 .chevron {
   cursor: pointer;
   position: absolute;
