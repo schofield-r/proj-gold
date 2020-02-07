@@ -23,9 +23,10 @@ export class CardCarouselComponent implements OnInit {
           this.displayData = [];
           data.projects.map(project => {
             if (project.status !== "Pitch") {
-              this.displayData.push(project);
+              this.displayData.unshift(project);
             }
           });
+          this.displayData.shift();
         },
         error => console.error("There was an error!", error)
       );
