@@ -1,4 +1,4 @@
-<h2>Login</h2>
+<!-- <h2>Login</h2>
 <form
   [formGroup]="loginForm"
   (ngSubmit)="onSubmit()"
@@ -36,4 +36,28 @@
     />
     <a routerLink="/sign-up" class="btn btn-link">Register</a>
   </div>
-</form>
+</form> -->
+
+<div class="sign-up-container">
+  <div class="sign-up-form">
+    <h2 class="close" aria-label="go back" routerLink="">
+      CLOSE X
+    </h2>
+    <h1>Login</h1>
+    <div class="text-inputs">
+      <label>
+        Username:
+        <input type="text" placeholder="username" required />
+      </label>
+      <label>
+        Password:
+        <input type="password" placeholder="password" required />
+      </label>
+    </div>
+    <label>
+      <button class="submitter" routerLink="/dashboard">
+        Sign me up!
+      </button>
+    </label>
+  </div>
+</div>
