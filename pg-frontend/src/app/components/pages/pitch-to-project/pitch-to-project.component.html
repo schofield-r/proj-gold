@@ -1,9 +1,30 @@
-<h1>Making it Happen</h1>
-<form style="background-color: white;">
-  <input type="text" placeholder="Role Title" />
-  <br />
-  <input type="text" placeholder="Role Description" />
-  <button>add another role</button>
-  <br />
-  <button type="submit" routerLink="/project/3">Let's Do It!</button>
-</form>
+<div class="sign-up-container">
+  <div class="sign-up-form">
+    <h2 class="close" aria-label="go back">
+      CLOSE X
+    </h2>
+    <h1>Making it Happen</h1>
+    <div class="text-inputs">
+      <label>
+        Role Title:
+        <input type="text" placeholder="Role Title" required />
+      </label>
+      <label>
+        Role Description:
+        <textarea
+          type="password"
+          placeholder="Role Description"
+          required
+        ></textarea>
+      </label>
+      <button class="add">
+        + Add another role
+      </button>
+    </div>
+    <label>
+      <button class="submitter" routerLink="/project/3">
+        Lets Do It!
+      </button>
+    </label>
+  </div>
+</div>

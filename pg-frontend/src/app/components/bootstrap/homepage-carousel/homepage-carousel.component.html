@@ -9,10 +9,16 @@
     <div class="carousel-caption">
       <h3
         class="carousel-caption-text"
-        style="font-family: Saira Condensed; font-size: 4rem;"
+        style="font-family: Saira Condensed; font-size: 4rem; font-weight: bold; text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.7), 0 0 0.25rem rgba(0, 0, 0, 0.7);"
       >
         Project {{ i + 1 }}
       </h3>
+      <p
+        style="font-size: 2.25rem; text-shadow: 0 0 3rem rgba(0, 0, 0, 0.5), 0 0 0.5rem rgba(0, 0, 0, 0.7), 0 0 0.25rem rgba(0, 0, 0, 0.9);"
+      >
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus veritatis
+        nulla quibusdam harum quidem nisi!
+      </p>
     </div>
     <a
       href="https://www.google.fr/?q=Number+{{ i + 1 }}"
@@ -21,7 +27,7 @@
     >
       <div class="picsum-img-wrapper">
         <img
-          style="max-height: 50vh;"
+          style="border-radius: 15px; border: 9px solid white;"
           [src]="img"
           alt="My image {{ i + 1 }} description"
         />

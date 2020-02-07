@@ -1,0 +1,94 @@
+.sign-up-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.close {
+  position: absolute;
+  color: black;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 1rem;
+}
+
+.sign-up-container h1 {
+  font-weight: bold;
+  margin: 1rem;
+}
+
+.sign-up-container button {
+  cursor: pointer;
+  margin-top: 1rem;
+  background-color: transparent;
+  border: 2px solid black;
+  color: black;
+  padding: 0.25rem 1.25rem;
+  border-radius: 4px;
+}
+
+.sign-up-container button.add {
+  margin: 0 1rem;
+  font-size: 1rem;
+}
+
+.sign-up-container button:hover {
+  background-color: black;
+  color: white;
+}
+
+.sign-up-form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.5rem;
+  background-color: white;
+  border-radius: 15px;
+  padding: 2rem;
+}
+
+.sign-up-form label {
+  display: flex;
+  margin: 0.5rem;
+}
+
+.sign-up-form input,
+.sign-up-form textarea {
+  padding: 0.25rem 0.5rem;
+  margin: 0 0.5rem;
+  width: 40rem;
+  color: black;
+}
+
+.sign-up-form textarea {
+  height: 10rem;
+}
+
+.text-inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.text-inputs label {
+  font-weight: bold;
+}
+
+.submitter {
+  font-size: 1.75rem;
+  margin-top: 0;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+  border: 2px solid black;
+  box-shadow: 0 0 0.5rem rgba(255, 255, 255, 0.9);
+  margin-right: 1.5rem;
+}
+
+button.submitter:hover {
+  color: black;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.7);
+  transform: scale(1.01);
+}
