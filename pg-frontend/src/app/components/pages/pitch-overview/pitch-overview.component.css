@@ -1,0 +1,110 @@
+.project-overview-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1rem 3rem;
+}
+
+.project-overview-container h1 {
+  color: white;
+  font-size: 4rem;
+}
+
+.project-overview-subheader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.sub-left {
+  display: flex;
+  align-items: center;
+}
+
+.sub-left * {
+  margin: 0;
+  margin-right: 2rem;
+}
+
+.btn.btn-outline-primary.pg {
+  color: white;
+  border-color: white;
+  border-width: 2px;
+  font-weight: 300;
+  outline: none;
+  box-shadow: none;
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+.btn.btn-outline-primary.pg.pg-alt {
+  font-weight: bold;
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  box-shadow: 0 0 0.5rem rgba(255, 255, 255, 0.9);
+  margin-right: 1.5rem;
+}
+
+.btn.btn-outline-primary.pg.pg-alt:hover {
+  background-color: #ffe70f;
+  color: black;
+  box-shadow: 0 0 1rem rgba(255, 231, 15, 0.7);
+  transform: scale(1.005);
+}
+
+.btn.btn-outline-primary.pg:hover {
+  background-color: white;
+  color: black;
+}
+
+.btn.btn-outline-primary.pg.like {
+  border-radius: 50%;
+}
+
+.btn.btn-outline-primary.pg.like:hover {
+  color: crimson;
+}
+
+.content {
+  padding: 2rem;
+  margin-top: 0.75rem;
+  background-color: white;
+  color: black;
+  border-radius: 15px;
+  font-size: 2rem;
+  height: 70vh;
+  display: flex;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.left-column {
+  width: calc(100% - 500px);
+  padding: 1rem;
+}
+
+.right-column {
+  min-width: 480px;
+  padding: 1rem;
+}
+
+.content h2,
+.content h3 {
+  font-weight: 700;
+}
+
+.content h3 {
+  margin-top: 2rem;
+}
+
+ul {
+  display: block;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
